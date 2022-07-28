@@ -1,5 +1,16 @@
 //Blog:http://52.198.119.162/2022/05/17/leetcode-js-8-string-to-integer/
 
+//<strong>solution:</strong>
+//1.確認數值的正負狀態
+//  如果是「+」，則default = 1
+//  如果是「-」，則default = -1
+//2.確認數值是否為整數
+//  移除前後空白
+//3.確認數值後是否有文字
+//  移除不考慮
+//4.數值的處理
+//  詳請月FlowChart
+
 var myAtoi = function (s) {
   // "   -321321 bunnies" 
   //ignore leading whitespaces
@@ -39,7 +50,12 @@ var myAtoi = function (s) {
   return result
 };
 
-// result = 0
-// result = result * 10 + digits[s[i]] => 0 + 4 = 4
-// result = result * 10 + digits[s[i]] => 4 * 10 + 2 = 42
-// Output = 42
+/* strong>Example 1</strong>
+<pre style='background-color:#ggg'>
+result = 0
+result = result * 10 + digits[s[i]] => 0 + 4 = 4
+result = result * 10 + digits[s[i]] => 4 * 10 + 2 = 42
+</pre>
+<pre style='background-color:#ggg'>
+Output = 42
+</pre> */
