@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/06/08/leetcode-js-14-longest-common-prefix/
+//Blog:http://52.198.119.162/2022/06/07/leetcode-js-20-valid-parentheses/
 
 //<strong>Solution:</strong>
 // 1. 運用「for...of」將input進行迴圈，比對錯誤即回傳false
