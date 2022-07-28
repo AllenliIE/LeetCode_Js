@@ -24,37 +24,45 @@ var romanToInt = function (s) {
   return total
 }
 
-// i = for loop
-// s.length = 7("MCMXCIV")
+/*  < strong > FlowChart:</strong>
+<pre style='background-color:#ggg'>
+i = for loop
+s.length = 7 ("MCMXCIV")
 
-// step.1
-// i = 0
-// romanMap[s[i]] = "M" = 1000
-// romanMap[s[i + 1]] = "C" = 100
-// else { total = 0 + 1000 = 1000 }
+step.1
+i = 0
+romanMap[s[i]] = "M" = 1000
+romanMap[s[i+1]] = "C" = 100
+else {total = 0 + 1000 = 1000}
 
-// step.2
-// i = 1
-// romanMap[s[i]] = "C" = 100
-// romanMap[s[i + 1]] = "M" = 1000
-// if (100 < 1000) { total = 1000 + 1000 - 100 = 1900 }
-// i++
+step.2
+i = 1
+romanMap[s[i]] = "C" = 100
+romanMap[s[i+1]] = "M" = 1000
+if (100 < 1000) {total = 1000 + 1000 - 100 = 1900}
+i++
 
-// step.3
-// i = 3
-// romanMap[s[i]] = "X" = 10
-// romanMap[s[i + 1]] = "C" = 100
-// if (10 < 100) { total = 1900 + 100 - 10 = 1990 }
-// i++
+step.3
+i = 3
+romanMap[s[i]] = "X" = 10
+romanMap[s[i+1]] = "C" = 100
+if (10 < 100) {total = 1900 + 100 - 10 = 1990}
+i++
 
-// step.4
-// i = 5
-// romanMap[s[i]] = "I" = 1
-// romanMap[s[i + 1]] = "V" = 5
-// if (1 < 5) { total = 1990 + 5 - 1 = 1994 }
-// i++
+step.4
+i = 5
+romanMap[s[i]] = "I" = 1
+romanMap[s[i+1]] = "V" = 5
+if (1 < 5) {total = 1990 + 5 - 1 = 1994}
+i++
 
-// step.5
-// i = 7
-// for i(7) < s.length(7) //條件不成立
-// break
+step.5
+i = 7 
+for i(7) < s.length(7) //條件不成立
+break
+</pre>
+
+<strong>Answer:</strong>
+<pre style='background-color:#ggg'>
+Output = 1994
+</pre> */
