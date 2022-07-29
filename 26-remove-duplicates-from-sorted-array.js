@@ -32,7 +32,7 @@ var removeDuplicates = function (nums) {
   return count++
 };
 
-{/* <strong>Example 1</strong>
+/* <strong>Example 1</strong>
 <pre style='background-color:#ggg'>
 step.1
 nums = [      1,      1,      2]
@@ -48,4 +48,4 @@ nums[1] = nums[2]
 
 step.3
 return ++count => 1 + 1 = 2
-</pre> */}
+</pre> */
