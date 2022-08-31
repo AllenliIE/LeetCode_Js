@@ -1,4 +1,5 @@
 //Blog: http://52.198.119.162/leetcode-js-88-merge-sorted-array/
+//Bubble: http://52.198.119.162/關於bubble-sort排序方法與示意圖/
 
 
 <strong>Solution:</strong>
