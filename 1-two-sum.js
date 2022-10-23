@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/05/22/leetcode-js-1-two-sum/
+//Blog:http://52.198.119.162/leetcode-js-1-two-sum/
 
 //<strong>Solution:</strong>
 //1. 想像數組的陣列為一區塊
