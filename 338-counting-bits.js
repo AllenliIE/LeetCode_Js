@@ -34,6 +34,7 @@
 
 // <strong>Code 1:</strongc>
 var countBits = function (n) {
+  if (n === 0) return [0]
   let ans = [0]
 
   for (let i = 0; i <= n; i++) {
