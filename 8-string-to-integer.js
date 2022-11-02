@@ -9,7 +9,7 @@
 //3.確認數值後是否有文字
 //  移除不考慮
 //4.數值的處理
-//  詳請月FlowChart
+//  詳請閱FlowChart
 
 var myAtoi = function (s) {
   // "   -321321 bunnies" 
@@ -59,3 +59,12 @@ result = result * 10 + digits[s[i]] => 4 * 10 + 2 = 42
 <pre style='background-color:#ggg'>
 Output = 42
 </pre> */
+
+//<strong>Code 2</strong>
+var myAtoi = function (s) {
+  const res = Number.parseInt(s);
+  if (!Number.isInteger(res)) return 0;
+  if (res > 2 ** 31 - 1) return 2 ** 31 - 1;
+  if (res < 2 ** 31 * -1) return 2 ** 31 * -1;
+  return res;
+};
