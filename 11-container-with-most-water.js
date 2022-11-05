@@ -105,3 +105,30 @@ var maxArea = function (height) {
 
     
   </pre> */
+
+//< strong > Code 2:</strong >
+var maxArea = function (height) {
+  let max = 0
+  for (let i = 0; i < height.length; i++) {
+    for (let j = i + 1; j < height.length; j++) {
+      let currentMax = (j - i) * Math.min(height[i], height[j])
+      if (currentMax > max) {
+        max = currentMax
+      }
+    }
+  }
+  return max
+}
+
+//<strong>Code 3: Conditional (ternary) operator</strong>
+var maxArea = function (height) {
+  let startIndex = 0
+  let endIndex = height.length - 1
+  let maxArea = 0
+
+  while (startIndex < endIndex) {
+    maxArea = Math.max(maxArea, Math.min(height[startIndex], height[endIndex]) * (endIndex - startIndex))
+    height[startIndex] <= height[endIndex] ? startIndex++ : endIndex--
+  }
+  return maxArea
+};
