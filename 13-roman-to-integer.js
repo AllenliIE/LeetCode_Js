@@ -1,5 +1,6 @@
 //Blog:http://52.198.119.162/2022/05/10/leetcode-js-13-roman-to-integer/
 
+// < strong > Code 1:</strong >
 var romanToInt = function (s) {
   const romanMap = { //建立羅馬轉換表
     'I': 1,
@@ -66,3 +67,30 @@ break
 <pre style='background-color:#ggg'>
 Output = 1994
 </pre> */
+
+// < strong > Code 2:</strong >
+var romanToInt = function (s) {
+  const romanMap = { //建立羅馬轉換表
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  }
+  let i = 0
+  let total = 0 //宣告待數字加總的空間
+
+  while (i < s.length) {
+    if (romanMap[s[i]] < romanMap[s[i + 1]] && i != (s.length - 1)) {
+      total += romanMap[s[i + 1]] - romanMap[s[i]];
+      i += 2;
+    } else {
+      total += romanMap[s[i]];
+      i++;
+    }
+  }
+  return total
+};
+
