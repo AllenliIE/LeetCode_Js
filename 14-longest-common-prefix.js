@@ -5,6 +5,7 @@
 // 2. 以陣列中第一組字串作為基準，互相比對字串是否連續相符。
 // 3. 如相符放入prefix陣列，不相符即回傳當前的prefix。
 
+//<strong>Code 1:</strong>
 var longestCommonPrefix = function (strs) {
   if (!strs.length) return ""
   let prefix = ""
@@ -37,3 +38,21 @@ strs[0][2] === strs[1][2] //[fl'o'wer] = [fl'o'w] --->true
 strs[1][2] === strs[2][2] //[fl'o'w] = [fl'i'ght] --->false
 return prefix = ['fl']
 </pre>  */
+
+//<strong>Code 2:</strong>
+var longestCommonPrefix = function (strs) {
+  if (!strs.length) return ""
+  let prefix = ""
+  let x = Math.min(...strs.map(o => o.length))
+
+  for (let i = 0; i < x; i++) {
+    let char = strs[0][i]
+
+    if (strs.every(str => str[i] === char)) {
+      prefix += char
+    } else {
+      break
+    }
+  }
+  return prefix
+};
