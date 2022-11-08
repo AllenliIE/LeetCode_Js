@@ -6,6 +6,7 @@
 // 3. 當「if條件」出現右括號時，pop()比對上一次儲存的左括號
 // 4. 最後當宣告的空陣列長度為0時，回傳ture 
 
+// <strong>Code 1:</strong>
 var isValid = function (s) {
   const array = []
   const map = {
@@ -38,3 +39,20 @@ array.pop = ['('] => map[element] = ['(']
 array.length === 0 => true
 </pre> */
 
+// <strong>Code 2:</strong>
+var isValid = function (s) {
+  const array = []
+
+  for (i = 0; i < s.length; i++) {
+    if (s[i] === '(') {
+      array.push(')')
+    } else if (s[i] === '{') {
+      array.push('}')
+    } else if (s[i] === '[') {
+      array.push(']')
+    } else if (array.pop() !== s[i]) {
+      return false
+    }
+  }
+  return (!array.length)
+};
