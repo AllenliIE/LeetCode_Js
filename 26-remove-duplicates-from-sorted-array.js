@@ -20,6 +20,7 @@
 //  box.length = Array + 1
 //</pre>
 
+// <strong>Code 1:</strong>
 var removeDuplicates = function (nums) {
   if (nums === null || nums.length === 0) return 0
   let count = 0
@@ -49,3 +50,14 @@ nums[1] = nums[2]
 step.3
 return ++count => 1 + 1 = 2
 </pre> */
+
+// <strong>Code 2:</strong>
+var removeDuplicates = function (nums) {
+  const uniq = new Set(nums);
+  const num = Array.from(uniq)
+
+  for (let i = 0; i < num.length; i++) {
+    nums[i] = num[i];
+  }
+  return num.length
+};
