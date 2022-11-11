@@ -14,9 +14,7 @@ var strStr = function (haystack, needle) {
 
   for (i = 0; i < haystack.length; i++) {
     let str = haystack.substr(i, needle.length)
-    if (str === needle) {
-      return i
-    }
+    if (str === needle) return i
   }
   return -1
 };
@@ -38,3 +36,11 @@ i = 2
 str = haystack.length(1, 2) => "ll" === "ll"
 return i // i = 2
 </pre> */
+
+// <strong>Code 2:</strong>
+var strStr = function (haystack, needle) {
+  return haystack.indexOf(needle)
+};
+
+// <strong>Code 3:</strong>
+const strStr = (haystack, needle) => haystack.search(needle);
