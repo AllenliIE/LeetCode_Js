@@ -6,6 +6,7 @@
 // 回傳它的位置。
 // 3. 如目標值不存在陣列，則放入陣列最後一個位置。
 
+// <strong>Code 1:</strong>
 var searchInsert = function (nums, target) {
   //運用indexOf指令比對並回傳位置
   const targetIndex = nums.indexOf(target)
@@ -30,3 +31,10 @@ nums   = [1, 3, 5, 6]
 target =        5
 return targetIndex //targetIndex = 2
 </pre> */
+
+// <strong>Code 2:</strong>
+var searchInsert = function (nums, target) {
+  nums.push(target)
+  nums.sort((a, b) => a - b)
+  return nums.indexOf(target)
+};
