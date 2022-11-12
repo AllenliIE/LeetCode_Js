@@ -38,3 +38,20 @@ var searchInsert = function (nums, target) {
   nums.sort((a, b) => a - b)
   return nums.indexOf(target)
 };
+
+// <strong>Code 3:</strong>
+var searchInsert = function (nums, target) {
+  let left = 0
+  let right = nums.length - 1
+  while (left <= right) {
+    const middle = Math.floor((left + right) / 2)
+    if (nums[middle] === target) {
+      return middle
+    } else if (nums[middle] > target) {
+      right = middle - 1
+    } else if (nums[middle] < target) {
+      left = middle + 1
+    }
+  }
+  return right + 1
+};
