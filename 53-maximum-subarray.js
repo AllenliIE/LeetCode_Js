@@ -7,6 +7,7 @@
 // 4. 如果下一個 nums 小於 0，則將兩者取最大值
 // 5. 回傳結果
 
+// <strong>Code 1:</strong>
 var maxSubArray = function (nums) {
   let response = nums[0]
   for (let i = 1; i < nums.length; ++i) {
@@ -79,3 +80,22 @@ response = Math.max(response, nums[i]) => Math.max(6, 5)
 
 return response = 6
 </pre> */
+
+
+// <strong>Code 2:</strong>  ex.Time Limit Exceeded
+var maxSubArray = function (nums) {
+  let max = Math.min.apply(null, nums)
+
+  for (i = 0; i < nums.length; i++) {
+    let sum = 0
+
+    for (j = i; j < nums.length; j++) {
+      sum += nums[j]
+
+      if (sum > max) {
+        max = sum
+      }
+    }
+  }
+  return max
+};
