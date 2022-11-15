@@ -308,3 +308,34 @@ temp = [[  0,  0,  0,  0,   |
           10, 15, 21, 28 ]] |
 ----------------------------+
 */
+
+// < strong > Code.2: Method of Recursion and Hashmap 遞迴和散列圖</strong >
+var uniquePaths = function (m, n) {
+  let temp = {}
+
+  const searchPath = function (m, n, temp) {
+    if (m === 1 || n === 1) return 1
+    temp[`${m}-${n}`] = searchPath(m - 1, n, temp) + searchPath(m, n - 1, temp)
+    console.log(temp)
+    return temp[`${m}-${n}`]
+  }
+  return searchPath(m, n, temp)
+};
+
+// <strong>Code.3: Method of Dynamic Programming 動態規劃</strong>
+var uniquePaths = function (m, n) {
+  let temp = new Array(m + 1).fill(1).map(x => new Array(n + 1).fill(0));
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+
+      if (i === 1 && j === 1) {
+        temp[i][j] = 1
+      } else {
+        temp[i][j] = temp[i - 1][j] + temp[i][j - 1]
+      }
+    }
+  }
+  return temp[m][n]
+}
+
