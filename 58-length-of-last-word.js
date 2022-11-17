@@ -6,7 +6,7 @@
 // 3. 注意陣列與數列的關係。
 // ex.
 //   word = [a, b, c]
-// array   0  1  2
+//   array   0  1  2
 
 // <strong>Code 1:</strong>
 var lengthOfLastWord = function (s) {
