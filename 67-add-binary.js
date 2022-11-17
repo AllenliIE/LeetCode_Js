@@ -53,3 +53,13 @@ return carry ? "1" + result : result
           1  ?  "1" + "00"  : "00"     
         true      "100"
 </pre> */
+
+// <strong>Code 2:</strong>
+var addBinary = function (a, b) {
+  return (BigInt("0b" + a) + BigInt("0b" + b)).toString(2);
+};
+
+/*
+const hugeBin = BigInt("0b11111111111111111111111111111111111111111111111111111");
+// ↪ 9007199254740991n
+*/
