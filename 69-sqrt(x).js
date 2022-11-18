@@ -5,7 +5,7 @@
 // 2. 當(r * r > x)時，更新 r 為(r + x / r) / 2 的整數
 // 3. 回傳 r。
 
-// <strong>Code:</strong>
+// <strong>Code 1:</strong>
 var mySqrt = function (x) {
   let r = x
 
@@ -28,3 +28,8 @@ step.2
 while(2 * 2 > 4) => break
 
 return r //2 */
+
+// <strong>Code 2:</strong>
+var mySqrt = function (x) {
+  return Math.floor(Math.sqrt(x));
+};
