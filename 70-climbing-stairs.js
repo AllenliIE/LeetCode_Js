@@ -15,10 +15,11 @@
 // ex. 每一次的迴圈代表前兩組的步驟相加，因為順序不同仍須計算為一次步驟
 // </pre>
 
+// <strong>Code:</strong>
 var climbStairs = function (n) {
-  if (n <= 1) {
-    return 1;
-  }
+  if (n <= 1) return 1;
+  if (n === 2) return 2;
+
 
   let [one, two] = [1, 1]
   for (let i = 2; i <= n; i++) {
