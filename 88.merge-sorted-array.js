@@ -83,3 +83,9 @@ k = 4 + 1, k < 6 ...  //k = 1, 2, 3, 4 ,5
 nums1[4] > nums1[5] //5 < 6
 
 nums1 = [1,2,2,3,5,6] */
+
+// <strong>Code 1:</strong>
+var merge = function (nums1, m, nums2, n) {
+  nums1.splice(m, n, ...nums2)
+  nums1.sort((a, b) => a - b)
+};
