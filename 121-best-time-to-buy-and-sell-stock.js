@@ -8,20 +8,19 @@
 // 5. 如果「當前的利潤」出現最大值，則更新為 profit。
 // 6. 最終回傳最大的 profit。
 
+// <strong>Code 1:</strong>
 var maxProfit = function (prices) {
   let min = Number.MAX_SAFE_INTEGER
   let profit = 0
 
   for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < min) { min = prices[i] }
+    if (prices[i] < min) min = prices[i]
 
     let currentProfit = prices[i] - min
-    if (currentProfit > profit) {
-      profit = currentProfit
-    }
+    if (currentProfit > profit) profit = currentProfit
   }
   return profit
-}
+};
 
 /* < strong > Example 1</strong >
 <pre style='background-color:#ggg'>
