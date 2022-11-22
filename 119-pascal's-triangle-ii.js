@@ -22,10 +22,10 @@
 //              O V 
 // </pre>
 
-// <strong>Code:</strong>
-var getRow = function(rowIndex) {
+// <strong>Code 1:</strong>
+var getRow = function (rowIndex) {
   if (rowIndex === 0) return [1]
-  if (rowIndex === 1) return [1,1]
+  if (rowIndex === 1) return [1, 1]
 
   let array = [1]
 
@@ -86,3 +86,13 @@ array.push(1) = [1] => [1,3,3,1]
 
 return array //[1,3,3,1]
 </pre> */
+
+// <strong>Code 2:</strong>
+var getRow = function (rowIndex) {
+  let ans = new Array(rowIndex + 1)
+
+  ans[0] = ans[rowIndex] = 1
+  for (i = 1, up = rowIndex; i < rowIndex; i++, up--)
+    ans[i] = ans[i - 1] * up / i
+  return ans
+};
