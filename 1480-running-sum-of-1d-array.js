@@ -7,6 +7,7 @@
 // 4. 並將 nums[i] 更新成加總後的 currentSum。
 // 5. 回傳新的 nums。
 
+// <strong>Code 1:</strong>
 var runningSum = function (nums) {
   let currentSum = 0
   for (i = 0; i < nums.length; i++) {
@@ -45,3 +46,18 @@ currentSum + nums[i] = 6 + 4 //10
 nums[i] = currentSum //10
 return nums //[1, 3, 6, 10]
 </pre> */
+
+// <strong> Code 2: map</strong>
+var runningSum = function (nums) {
+  let currentSum = 0
+  return nums.map(num => currentSum += num)
+}
+
+// <strong> Code 3:</strong>
+var runningSum = function (nums) {
+  for (let i = 1; i < nums.length; i++) {
+    nums[i] += nums[i - 1]
+  }
+  return nums
+}
+
