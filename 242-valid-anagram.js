@@ -5,7 +5,7 @@
 // 2. 將 s 和 t 字串切割，並進行字母排序，再將字母組合。
 // 3. 判斷 s 和 t 是否相同，並回傳true，反之回傳 false。
 
-// <strong>Code:</strong>
+// <strong>Code 1:</strong>
 var isAnagram = function (s, t) {
   if (s.length !== t.length) return false
 
@@ -23,3 +23,13 @@ s = "aaagmnr"
 t = "aaagmnr"
 
 return true */
+
+// <strong>Code 2:</strong>
+var isAnagram = function (s, t) {
+
+  if (s.split('').sort().join('') === t.split('').sort().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+};
