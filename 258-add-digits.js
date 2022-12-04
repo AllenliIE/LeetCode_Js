@@ -22,3 +22,22 @@ var addDigits = function (num) {
   }
   return num
 };
+
+
+/* <strong>Example 1</strong>
+<pre style='background-color:#ggg'>
+Input: num = 38
+
+38 !== 0
+--> 3 + 8 --> 11
+
+11 !== 0
+--> 1 + 1 --> 2
+
+2 < 9, return 2
+</pre> */
+
+// <strong>Code 2:</strongc>
+var addDigits = function (num) {
+  return 1 + (num - 1) % 9
+};
