@@ -6,7 +6,7 @@
 // 3. 運用 while 迴圈，將 n > 5 的數值先行減半。
 // 4. 再回傳 n % 2 的餘數，如為 0 則回傳 true，如為 1 則回傳 false。
 
-// <strong>Code:</strong>
+// <strong>Code 1:</strong>
 var isPowerOfTwo = function (n) {
   if (n <= 0) return false
   if (n === 1) return true
@@ -33,3 +33,13 @@ return 8 % 2 === 0 //true
 Input: n = 3
 return 3 % 2 !== 0 //false
 */
+
+// <strong>Code 2:</strong>
+var isPowerOfTwo = function (n) {
+  if (n === 1) return true;
+  while (n >= 2) {
+    if (n === 2) return true;
+    n = n / 2
+  }
+  return false;
+};
