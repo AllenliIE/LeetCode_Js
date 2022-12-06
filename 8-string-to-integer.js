@@ -61,8 +61,8 @@ Output = 42
 
 //<strong>Code 2</strong>
 var myAtoi = function (s) {
-  const res = Number.parseInt(s);
-  if (!Number.isInteger(res)) return 0;
+  const res = parseInt(s) || 0;
+
   if (res > 2 ** 31 - 1) return 2 ** 31 - 1;
   if (res < 2 ** 31 * -1) return 2 ** 31 * -1;
   return res;
