@@ -32,3 +32,9 @@ var isPalindrome = function (x) {
 
   return x === reverse;
 };
+
+// < strong > Code 3:</strong >
+var isPalindrome = function (x) {
+  if (x < 0) return false;
+  return `${x}` === `${x}`.split('').reverse().join('')
+};
