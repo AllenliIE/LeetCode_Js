@@ -44,3 +44,8 @@ var strStr = function (haystack, needle) {
 
 // <strong>Code 3:</strong>
 const strStr = (haystack, needle) => haystack.search(needle);
+
+// <strong>Code 4:</strong>
+var strStr = function (haystack, needle) {
+  return haystack.includes(needle) ? haystack.indexOf(needle) : -1;
+};
