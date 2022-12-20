@@ -61,3 +61,16 @@ var runningSum = function (nums) {
   return nums
 }
 
+// <strong> Code 4:</strong>
+var runningSum = function (nums) {
+  let newNums = []
+
+  for (let i = 0; i < nums.length; i++) {
+    if (i === 0) {
+      newNums[i] = nums[i]
+    } else {
+      newNums[i] = newNums[i - 1] + nums[i]
+    }
+  }
+  return newNums;
+};
