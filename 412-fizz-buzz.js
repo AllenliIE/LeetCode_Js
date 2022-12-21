@@ -52,7 +52,7 @@ i = 15 //'FizzBuzz'
 return ans //["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 </pre> */
 
-// <strong>Code 2: Conditional operator</strong>
+// <strong>Code 2: Conditional(ternary) operator</strong>
 var fizzBuzz = function (n) {
   let ans = []
 
