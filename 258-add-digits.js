@@ -5,24 +5,23 @@
 // 執行以下：
 // (1.) sum = 0 + 個位數
 // (2.) num = num / 10
-//    
+//
 //     將 num = sum，回傳 num。
 
 // <strong>Code 1:</strongc>
 var addDigits = function (num) {
-  if (num < 10 && num >= 0) return num
+  if (num < 10 && num >= 0) return num;
 
   while (num > 9) {
-    let sum = 0
+    let sum = 0;
     while (parseInt(num) !== 0) {
-      sum += parseInt(num % 10)
-      num /= 10
+      sum += parseInt(num % 10);
+      num /= 10;
     }
-    num = sum
+    num = sum;
   }
-  return num
+  return num;
 };
-
 
 /* <strong>Example 1</strong>
 <pre style='background-color:#ggg'>
@@ -39,5 +38,12 @@ Input: num = 38
 
 // <strong>Code 2:</strongc>
 var addDigits = function (num) {
-  return 1 + (num - 1) % 9
+  if (num === 0) return 0;
+  if (num % 9 === 0) return 9;
+  return num % 9;
+};
+
+// <strong>Code 3:</strongc>
+var addDigits = function (num) {
+  return 1 + ((num - 1) % 9);
 };
