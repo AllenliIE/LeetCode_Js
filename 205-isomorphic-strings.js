@@ -7,6 +7,7 @@
 // 4. 其餘狀況將該輪的 object內容更新。
 // 5. 完整走完迴圈則返回 ture。
 
+// <strong>Code 1:</strong>
 var isIsomorphic = function (s, t) {
   let objectS = {}, objectT = {}
 
@@ -45,3 +46,13 @@ objectT[t[1]] = i //2
 
 return true
 </pre> */
+
+// <strong>Code 2:</strong>
+var isIsomorphic = function (s, t) {
+  if (s.length !== t.length) return false;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s.indexOf(s[i]) !== t.indexOf(t[i])) return false;
+  }
+  return true;
+}
