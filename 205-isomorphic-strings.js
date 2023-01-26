@@ -9,6 +9,8 @@
 
 // <strong>Code 1:</strong>
 var isIsomorphic = function (s, t) {
+  if (s.length !== t.length) return false;
+
   let objectS = {}, objectT = {}
 
   for (let i = 0; i < s.length; i++) {
