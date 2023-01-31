@@ -14,14 +14,14 @@ var isIsomorphic = function (s, t) {
   let objectS = {}, objectT = {}
 
   for (let i = 0; i < s.length; i++) {
-    if (objectS[s[i]] !== objectT[t[i]]) {
-      return false
-    } else {
+    if (objectS[s[i]] === objectT[t[i]]) {
       objectS[s[i]] = i
       objectT[t[i]] = i
+    } else {
+      return false;
     }
   }
-  return true
+  return true;
 }
 
 /* < strong > Example 1</strong >
