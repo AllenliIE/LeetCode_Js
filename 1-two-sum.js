@@ -8,6 +8,7 @@
 //   false: 是未定義，將比對回合數放入box中對應數組位置
 //ex.詳情請閱FlowChart
 
+//<strong>Code 1:</strong>
 const twoSum = function (nums, target) {
   const box = {};
   for (let i = 0; i < nums.length; i++) {
@@ -37,3 +38,13 @@ i = 1; nums[1] = 7;
 if ((box[9 - 7]) !== undefined) // box[2] = 0
   return ([box[9 - 7], 1]) // [0, 1]
 </pre>*/
+
+//<strong>Code 2:</strong>
+var twoSum = function(nums, target) {  
+  for (let i = 0; i < nums.length; i++) {
+    let remainNum = target - nums[i]
+    for (let j = i + 1; j <= nums.length; j++) {
+      if (nums[j] === remainNum) return [i, j]
+    }
+  }
+};
