@@ -15,11 +15,11 @@ var searchInsert = function (nums, target) {
   //使用for依序比對目標與陣列值得大小
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] > target) {
-      return i
+      return i;
     }
   }
   //陣列沒有比目標值大，放到最後一個位置
-  return nums.length
+  return nums.length;
 };
 
 /* <strong>Example 1</strong>
@@ -36,22 +36,24 @@ return targetIndex //targetIndex = 2
 var searchInsert = function (nums, target) {
   nums.push(target)
   nums.sort((a, b) => a - b)
-  return nums.indexOf(target)
+  return nums.indexOf(target);
 };
 
 // <strong>Code 3:</strong>
 var searchInsert = function (nums, target) {
-  let left = 0
-  let right = nums.length - 1
+  const targetIndex = nums.indexOf(target)
+  if (targetIndex >= 0) return targetIndex;
+
   while (left <= right) {
     const middle = Math.floor((left + right) / 2)
+
     if (nums[middle] === target) {
-      return middle
+        return middle;
     } else if (nums[middle] > target) {
-      right = middle - 1
+        right = middle - 1
     } else if (nums[middle] < target) {
-      left = middle + 1
+        left = middle + 1
     }
   }
-  return right + 1
+  return right + 1;
 };
