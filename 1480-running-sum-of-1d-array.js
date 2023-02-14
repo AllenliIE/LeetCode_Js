@@ -74,3 +74,12 @@ var runningSum = function (nums) {
   }
   return newNums;
 };
+
+// <strong> Code 5:</strong>
+var runningSum = function(nums) {
+
+  for (let i = 1; i < nums.length; i++) {
+      nums[i] = nums[i - 1] + nums[i]
+  }
+  return nums;
+};
