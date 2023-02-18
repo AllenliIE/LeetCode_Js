@@ -2,10 +2,10 @@
 //Bubble: http://52.198.119.162/關於bubble-sort排序方法與示意圖/
 
 
-<strong>Solution:</strong>
-1. 宣告 count = 0
-2. 使用 for 迴圈將 nums2 的值合併到nums1。
-3. 雙 for 迴圈進行兩兩比對，當 nums1 > nums2 時，兩兩數字互換。
+//<strong>Solution:</strong>
+//1. 宣告 count = 0
+//2. 使用 for 迴圈將 nums2 的值合併到nums1。
+//3. 雙 for 迴圈進行兩兩比對，當 nums1 > nums2 時，兩兩數字互換。
 
 // < strong > Code:</strong >
 var merge = function (nums1, m, nums2, n) {
