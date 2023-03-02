@@ -107,20 +107,18 @@ var maxArea = function (height) {
     
   </pre> */
 
-//< strong > Code 2:</strong >
-var maxArea = function (height) {
-  let max = 0;
-
+//< strong > Code 2:  Double for loop (BigO(n^2))</strong >
+var maxArea = function(height) {
+  let maxArea = 0
   for (let i = 0; i < height.length; i++) {
-    for (let j = i + 1; j < height.length; j++) {
-      let currentMax = (j - i) * Math.min(height[i], height[j])
-      if (currentMax > max) {
-        max = currentMax
+      for (let j = i + 1; j < height.length; j++) {
+        console.log(i, j)
+          let currentMaxArea = (j - i) * Math.min(height[i], height[j])
+          if (currentMaxArea > maxArea) maxArea = currentMaxArea
       }
-    }
   }
-  return max;
-}
+  return maxArea;
+};
 
 //<strong>Code 3: Conditional (ternary) operator (BigO(n))</strong>
 var maxArea = function (height) {
@@ -135,16 +133,3 @@ var maxArea = function (height) {
   return maxArea;
 };
 
-//<strong>Code 4: Double for loop (BigO(n^2))</strong>
-var maxArea = function(height) {
-  let max = 0;
-  for (let i = 0; i < height.length; i++) {
-      for (let j = i + 1; j < height.length; j++) {
-          let h = Math.min(height[i], height[j]);
-          let w = j - i;
-          let area = h * w;
-          max = Math.max(max, area);
-      }
-  }
-  return max;
-};
