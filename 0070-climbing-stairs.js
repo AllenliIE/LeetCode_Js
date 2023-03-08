@@ -17,9 +17,10 @@
 
 //<strong>Code 1: BigO(n)</strong>
 var climbStairs = function(n) {
-  if (n === 0) return 0;
+  if (n <= 1) return 1;
+  if (n === 2) return 2;
 
-  let newArray = [0, 1, 2, 3]
+  let newArray = [0, 1, 2]
   for (let i = 3; i <= n; i++) {
       newArray[i] = newArray[i - 2] + newArray[i - 1]
   }
@@ -41,7 +42,6 @@ return one = 2
 var climbStairs = function (n) {
   if (n <= 1) return 1;
   if (n === 2) return 2;
-
 
   let [one, two] = [1, 1]
   for (let i = 2; i <= n; i++) {
