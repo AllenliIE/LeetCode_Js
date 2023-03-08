@@ -15,19 +15,15 @@
 // ex. 每一次的迴圈代表前兩組的步驟相加，因為順序不同仍須計算為一次步驟
 // </pre>
 
-// <strong>Code:</strong>
-var climbStairs = function (n) {
-  if (n <= 1) return 1;
-  if (n === 2) return 2;
+//<strong>Code 1: BigO(n)</strong>
+var climbStairs = function(n) {
+  if (n === 0) return 0;
 
-
-  let [one, two] = [1, 1]
-  for (let i = 2; i <= n; i++) {
-    let temp = one
-    one = one + two
-    two = temp
+  let newArray = [0, 1, 2, 3]
+  for (let i = 3; i <= n; i++) {
+      newArray[i] = newArray[i - 2] + newArray[i - 1]
   }
-  return one;
+  return newArray[n];
 };
 
 /* <strong>Example 1</strong>
@@ -42,10 +38,16 @@ return one = 2
 </pre> */
 
 //<strong>Code 2: BigO(n)</strong>
-var climbStairs = function(n) {
-    let newArray = [0, 1, 2, 3]
-    for (let i = 3; i <= n; i++) {
-        newArray[i] = newArray[i - 2] + newArray[i - 1]
-    }
-    return newArray[n];
+var climbStairs = function (n) {
+  if (n <= 1) return 1;
+  if (n === 2) return 2;
+
+
+  let [one, two] = [1, 1]
+  for (let i = 2; i <= n; i++) {
+    let temp = one
+    one = one + two
+    two = temp
+  }
+  return one;
 };
