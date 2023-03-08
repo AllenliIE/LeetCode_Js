@@ -40,3 +40,12 @@ case2 => i = 2, steps = 1 + 1 = 2 (1次1階梯 + 1次2階梯)
 
 return one = 2
 </pre> */
+
+//<strong>Code 2: BigO(n)</strong>
+var climbStairs = function(n) {
+    let newArray = [0, 1, 2, 3]
+    for (let i = 3; i <= n; i++) {
+        newArray[i] = newArray[i - 2] + newArray[i - 1]
+    }
+    return newArray[n];
+};
