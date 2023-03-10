@@ -9,10 +9,10 @@
 var isAnagram = function (s, t) {
   if (s.length !== t.length) return false
 
-  var s = s.split("").sort().join("")
-  var t = t.split("").sort().join("")
+  var s = s.split("").sort().join(""),
+      t = t.split("").sort().join("")
 
-  return s === t
+  return s === t;
 };
 
 /* <strong>FlowChart:</strong>
