@@ -15,7 +15,7 @@ var containsDuplicate = function (nums) {
     if (map[i]) return true
     map[i] = true
   }
-  return false
+  return false;
 };
 
 /* <strong>FlowChart:</strong>
