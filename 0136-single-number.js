@@ -6,33 +6,27 @@
 // 3. 將 nums 中的數值與次數依序放入 box 物件中。
 // 4. 依序尋找物件中數值的次數為 1，回傳該數值。
 
-// <strong>Code1: two for loop</strong>
+// <strong>Code 1: BigO(2n) two for loop</strong>
 var singleNumber = function (nums) {
   if (nums.length === 1) return nums[0]
 
   let box = {}
 
   for (let i = 0; i < nums.length; i++) {
-    if (box[nums[i]]) {
-      box[nums[i]]++
-    } else {
-      box[nums[i]] = 1
-    }
+    box[nums[i]] = (box[nums[i]] || 0) + 1
   }
 
-  for (let i in box) {
-    if (box[i] === 1) {
-      return i
-    }
+  for (let num in box) {
+    if (box[num] === 1) return num;
   }
 };
 
-// <strong>Code2: XOR</strong>
+// <strong>Code 2: BigO(n) XOR</strong>
 var singleNumber = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     nums[0] ^= nums[i]
   }
-  return nums[0]
+  return nums[0];
 };
 
 /* <strong>Example 1</strong>
