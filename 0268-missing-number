@@ -9,16 +9,21 @@
 //    (正常數列的加總 - 減去該陣列實際值得加總 = 缺少的數字)
 // 5. 回傳 nums 的長度減去 result。
 
-// <strong>Code 1: BigO(n)</strongc>
+// <strong>Code 1: BigO(2n)</strongc>
 var missingNumber = function (nums) {
-  let result = 0
-  let numLength = nums.length
-  if (numLength === 0) return 0
+  let length = nums.length,
+  lengthTotal = 0,
+  numsTotal = 0
+  
+  if (length === 0) return 0;
 
-  for (let i = 0; i < numLength; i++) {
-    result += nums[i] - i
+  for (let i = 0; i <= nums.length; i++) {
+    lengthTotal += i
   }
-  return numLength - result
+  for (let i = 0; i < nums.length; i++) {
+    numsTotal += nums[i]
+  }
+  return lengthTotal - numsTotal;  
 };
 
 /* <strong>FlowChart:</strong>
@@ -33,30 +38,27 @@ result = 2 + 1 - 2 = 1
 return numLength - result = 3 - 1 = 2
 */
 
-/* <strong>Code 2: BigO(2n)</strongc> */
+/* <strong>Code 2: BigO(n)</strongc> */
 var missingNumber = function(nums) {
-    let numsCorrectTotal = 0, 
-        numsTotal = 0
+  let length = nums.length,
+  numsTotal = 0
 
-    for (let i = 0; i <= nums.length; i++) {
-        numsCorrectTotal += i
-        console.log(i, numsCorrectTotal)
-    }
-    for (let i = 0; i < nums.length; i++) {
-        numsTotal += nums[i]
-        console.log(nums[i], numsTotal)
-    }
+  if (length === 0) return 0;
 
-    return numsCorrectTotal - numsTotal;  
+  for (let i = 0; i < nums.length; i++) {
+    numsTotal += nums[i] - i
+  }
+
+  return length - numsTotal;
 };
 
-/* <strong>Code 3: BigO(n)</strongc> */
+/* <strong>Code 3: BigO(n) ES6 Set</strongc> */
 var missingNumber = function(nums) {
   let numsSet = new Set(nums),
   lostNumbers = []
 
   for (let i = 1; i <= nums.length; i++) {
-  if (!numsSet.has(i)) lostNumbers.push(i)
+    if (!numsSet.has(i)) lostNumbers.push(i)
   }
   return lostNumbers;
 };
