@@ -11,16 +11,16 @@
 
 // <strong>Code 1: BigO(2n)</strongc>
 var missingNumber = function (nums) {
-  let length = nums.length,
-  lengthTotal = 0,
-  numsTotal = 0
+  let length = nums.length
+      lengthTotal = 0,
+      numsTotal = 0
   
   if (length === 0) return 0;
 
-  for (let i = 0; i <= nums.length; i++) {
+  for (let i = 0; i <= length; i++) {
     lengthTotal += i
   }
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < length; i++) {
     numsTotal += nums[i]
   }
   return lengthTotal - numsTotal;  
@@ -41,11 +41,11 @@ return numLength - result = 3 - 1 = 2
 /* <strong>Code 2: BigO(n)</strongc> */
 var missingNumber = function(nums) {
   let length = nums.length,
-  numsTotal = 0
+      numsTotal = 0
 
   if (length === 0) return 0;
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < length; i++) {
     numsTotal += nums[i] - i
   }
 
