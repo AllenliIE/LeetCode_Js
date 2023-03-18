@@ -57,7 +57,7 @@ var missingNumber = function(nums) {
   let numsSet = new Set(nums),
   lostNumbers = []
 
-  for (let i = 1; i <= nums.length; i++) {
+  for (let i = 0; i <= nums.length; i++) {
     if (!numsSet.has(i)) lostNumbers.push(i)
   }
   return lostNumbers;
