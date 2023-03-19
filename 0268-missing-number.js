@@ -62,3 +62,12 @@ var missingNumber = function(nums) {
   }
   return lostNumbers;
 };
+
+//<strong>Code 4: BigO(n) ES6 Set</strongc>
+var missingNumber = function(nums) {
+  let numsSet = new Set(nums)
+
+  for (let i = 0; i <= nums.length; i++) {
+    if (!numsSet.has(i)) return i;
+  }
+};
