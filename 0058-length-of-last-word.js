@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/06/22/leetcode-js-58-length-of-last-word/
+//Blog:https://allenliservice.site/leetcode-js-58-length-of-last-word-2/
 
 // <strong>Solution:</strong>
 // 1. 運用.trim()移除字串中，字首前、字尾後的空白。
@@ -8,10 +8,18 @@
 //   word = [a, b, c]
 //   array   0  1  2
 
-// <strong>Code 1:</strong>
-var lengthOfLastWord = function (s) {
-  const arr = s.trim().split(' ')
-  return arr[arr.length - 1].length
+// <strong>Code 1: BigO(n)</strong>
+var lengthOfLastWord = function(s) {
+  let array = s.split(/\s/); 
+
+  if(s.length === 0) return 0;
+  if(array.length === 0) return 0;
+
+  while(array.length > 0){
+      let lastWord = array.pop();
+      if(lastWord.length > 0) return lastWord.length;
+  }
+  return 0;
 };
 
 /* <strong>Example 1</strong>
@@ -26,7 +34,13 @@ return arr[arr.length - 1].length
 
 </pre> */
 
-// <strong>Code 2:</strong>
+// <strong>Code 2: BigO(n)</strong>
+var lengthOfLastWord = function (s) {
+  const arr = s.trim().split(' ')
+  return arr[arr.length - 1].length
+};
+
+// <strong>Code 3: BigO(n)</strong>
 var lengthOfLastWord = function (s) {
   if (s.length === 0) return 0
   let arr = s.trim().split(' ')
