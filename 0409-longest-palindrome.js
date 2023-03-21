@@ -82,7 +82,7 @@ var longestPalindrome = function(s) {
     const counts = new Set()
     let length = 0
 
-    for (const letter of s) {
+    for (let letter of s) {
         if (counts.has(letter)) {
             length += 2
             counts.delete(letter)
