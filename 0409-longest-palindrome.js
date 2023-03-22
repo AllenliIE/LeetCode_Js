@@ -18,25 +18,26 @@
 // 6. 回傳長度。
 
 // <strong>Code 1: BigO(n)</strong>
-var longestPalindrome = function(s) {
-  const counts = {}
-  let length = 0, condition = false
+var longestPalindrome = function (s) {
+  let counts = {},
+    length = 0,
+    condition = false;
 
   for (let i = 0; i < s.length; i++) {
-    counts[s[i]] = (counts[s[i]] || 0) + 1
+    counts[s[i]] = (counts[s[i]] || 0) + 1;
   }
-  
+
   for (let letter in counts) {
     if (counts[letter] % 2 === 0) {
-      length += counts[letter]
+      length += counts[letter];
     } else {
-      condition = true
-      length += counts[letter] - 1
+      condition = true;
+      length += counts[letter] - 1;
     }
   }
-  if (condition) length += 1
+  if (condition) length += 1;
 
-  return length
+  return length;
 };
 /* < strong > Example 1</strong >
 <pre style='background-color:#ggg'>
@@ -78,18 +79,18 @@ return length //7
 </pre> */
 
 // <strong>Code 2: BigO(n)</strong>
-var longestPalindrome = function(s) {
-    const counts = new Set()
-    let length = 0
+var longestPalindrome = function (s) {
+  const counts = new Set();
+  let length = 0;
 
-    for (let letter of s) {
-        if (counts.has(letter)) {
-            length += 2
-            counts.delete(letter)
-        } else {
-            counts.add(letter)
-        }
+  for (let letter of s) {
+    if (counts.has(letter)) {
+      length += 2;
+      counts.delete(letter);
+    } else {
+      counts.add(letter);
     }
+  }
 
-    return length + (counts.size > 0 ? 1 : 0);
+  return length + (counts.size > 0 ? 1 : 0);
 };
