@@ -19,17 +19,17 @@
 // 3. 運用「for in」將每個元素皆除以2，如果剩餘1，則 count++。
 // 4. 回傳 count 次數。
 
-<strong>Code:</strong>
+//<strong>Code 1: BigO(n)</strong>;
 var hammingWeight = function (n) {
-  let count = 0
-  let nums = n.toString(2).split("");
+  let count = 0,
+    nums = n.toString(2).split("");
 
-  for (let i in nums) {
-    if (nums[i] % 2 === 1) {
-      count++
+  for (let num in nums) {
+    if (nums[num] % 2 === 1) {
+      count++;
     }
   }
-  return count
+  return count;
 };
 
 /* <strong>FlowChart:</strong>
