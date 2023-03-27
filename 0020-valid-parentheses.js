@@ -6,40 +6,38 @@
 // 3. 當「if條件」出現右括號時，pop()比對上一次儲存的左括號
 // 4. 最後當宣告的空陣列長度為0時，回傳ture 
 
-// <strong>Code 1:</strong>
+// <strong>Code 1: BigO(n)</strong>
 var isValid = function (s) {
   const array = []
   const map = {
-    "}": "{",
-    ")": "(",
-    "]": "["
+      ")":"(",
+      "]":"[",
+      "}":"{"
   }
 
-  for (let element of s) {
-    if (element === '{' || element === '(' || element === '[') {
-      array.push(element)
-    } else {
-      if (array.pop() !== map[element]) {
-        return false
+  for (let char of s) {
+      if (char === "(" || char === "[" || char === "{") {
+          array.push(char)
+      } else if (array.pop() !== map[char]) {
+          return false;
       }
-    }
   }
-  return array.length === 0
+  return (!array.length);
 };
 
 /* <strong>Example 1</strong>
 <pre style='background-color:#ggg'>
 step.1
-element = '('
+char = '('
 array = [] => array = ['(']
 
 step.2
-element = ')'
-array.pop = ['('] => map[element] = ['(']
+char = ')'
+array.pop = ['('] => map[char] = ['(']
 array.length === 0 => true
 </pre> */
 
-// <strong>Code 2:</strong>
+// <strong>Code 2: BigO(n)</strong>
 var isValid = function (s) {
   const array = []
 
@@ -51,8 +49,8 @@ var isValid = function (s) {
     } else if (s[i] === '[') {
       array.push(']')
     } else if (array.pop() !== s[i]) {
-      return false
+      return false;
     }
   }
-  return (!array.length)
+  return (array.length === 0);
 };
