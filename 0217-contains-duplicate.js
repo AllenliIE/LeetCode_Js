@@ -6,13 +6,13 @@
 // 3. 判斷該數值是否存在 hashTable 物件中，如有回傳 true，反之在 hashTable 物件存入該數值為名稱，並配對 true。
 // 4. 沒有重複出現的數值，則回傳 false。
 
-// <strong>Code:</strong>
+// <strong>Code 1: BigO(n)</strong>
 var containsDuplicate = function (nums) {
-  let hashTable = {}
+  let hashTable = {};
 
   for (let num of nums) {
     if (hashTable[num]) return true;
-    hashTable[num] = true
+    hashTable[num] = true;
   }
   return false;
 };
@@ -28,3 +28,17 @@ Input: nums = [1,2,3,1]
 
 if (hashTable[1]) = true, return true;
 </pre> */
+
+// <strong>Code 2: BigO(n)</strong>
+var containsDuplicate = function (nums) {
+  const numsSet = new Set();
+
+  for (let num of nums) {
+    if (numsSet.has(num)) {
+      return true;
+    } else {
+      numsSet.add(num);
+    }
+  }
+  return false;
+};
