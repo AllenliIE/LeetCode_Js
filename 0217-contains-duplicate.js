@@ -29,7 +29,20 @@ Input: nums = [1,2,3,1]
 if (hashTable[1]) = true, return true;
 </pre> */
 
-// <strong>Code 2: BigO(n)</strong>
+// <strong>Code 2: BigO(2n)</strong>
+var containsDuplicate = function (nums) {
+  const hashTable = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    hashTable[nums[i]] = (hashTable[nums[i]] || 0) + 1;
+  }
+  for (let num of nums) {
+    if (hashTable[num] > 1) return true;
+  }
+  return false;
+};
+
+// <strong>Code 3: BigO(n)</strong>
 var containsDuplicate = function (nums) {
   const numsSet = new Set();
 
