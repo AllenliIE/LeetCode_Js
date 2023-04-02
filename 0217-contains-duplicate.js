@@ -55,3 +55,14 @@ var containsDuplicate = function (nums) {
   }
   return false;
 };
+
+// <strong>Code 4: BigO(n)</strong>
+var containsDuplicate = function (nums) {
+  const numsSet = new Set(nums);
+  return numsSet.size !== nums.length;
+};
+
+// <strong>Code 5: BigO(n)</strong>
+var containsDuplicate = function (nums) {
+  return new Set(nums).size !== nums.length;
+};
