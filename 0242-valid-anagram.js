@@ -7,10 +7,10 @@
 
 // <strong>Code 1: BigO(n log n)</strong>
 var isAnagram = function (s, t) {
-  if (s.length !== t.length) return false
+  if (s.length !== t.length) return false;
 
-  var s = s.split("").sort().join(""),
-      t = t.split("").sort().join("")
+  s = s.split("").sort().join("");
+  t = t.split("").sort().join("");
 
   return s === t;
 };
@@ -26,8 +26,7 @@ return true */
 
 // <strong>Code 2: BigO(n log n)</strong>
 var isAnagram = function (s, t) {
-
-  if (s.split('').sort().join('') === t.split('').sort().join('')) {
+  if (s.split("").sort().join("") === t.split("").sort().join("")) {
     return true;
   } else {
     return false;
@@ -35,24 +34,24 @@ var isAnagram = function (s, t) {
 };
 
 // <strong>Code 3: BigO(n)</strong>
-var isAnagram = function(s, t) {
+var isAnagram = function (s, t) {
   if (s.length !== t.length) return false;
-  
+
   let map = {};
   for (let i = 0; i < s.length; i++) {
-      if (!map[s[i]]) {
-          map[s[i]] = 1;
-      } else {
-          map[s[i]]++;
-      }
+    if (!map[s[i]]) {
+      map[s[i]] = 1;
+    } else {
+      map[s[i]]++;
+    }
   }
-  
+
   for (let i = 0; i < t.length; i++) {
-      if (map[t[i]]) {
-          map[t[i]]--;
-      } else {
-          return false;
-      }
+    if (map[t[i]]) {
+      map[t[i]]--;
+    } else {
+      return false;
+    }
   }
   return true;
 };
