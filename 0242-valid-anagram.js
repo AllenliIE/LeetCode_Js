@@ -33,25 +33,18 @@ var isAnagram = function (s, t) {
   }
 };
 
-// <strong>Code 3: BigO(n)</strong>
+// <strong>Code 3: BigO(2n)</strong>
 var isAnagram = function (s, t) {
   if (s.length !== t.length) return false;
+  const hashTable = {};
 
-  let map = {};
   for (let i = 0; i < s.length; i++) {
-    if (!map[s[i]]) {
-      map[s[i]] = 1;
-    } else {
-      map[s[i]]++;
-    }
+    hashTable[s[i]] = (hashTable[s[i]] || 0) + 1;
+  }
+  for (let j = 0; j < t.length; j++) {
+    if (!hashTable[t[j]]) return false;
+    hashTable[t[j]]--;
   }
 
-  for (let i = 0; i < t.length; i++) {
-    if (map[t[i]]) {
-      map[t[i]]--;
-    } else {
-      return false;
-    }
-  }
   return true;
 };
