@@ -9,16 +9,15 @@
 //ex.詳情請閱FlowChart
 
 //<strong>Code 1:</strong>
-const twoSum = function (nums, target) {
+var twoSum = function (nums, target) {
   const box = {};
   for (let i = 0; i < nums.length; i++) {
     if (box[target - nums[i]] !== undefined) {
-      return [box[target - nums[i]], i]
+      return [box[target - nums[i]], i];
     } else {
-      box[nums[i]] = i
+      box[nums[i]] = i;
     }
   }
-
 };
 
 /* <strong>Example 1</strong>
@@ -29,22 +28,22 @@ step.1
 box = []
 i = 0; nums[i] = 2;
 if ((box[9 - 2]) === undefined) // box[7]沒有東西
-  box[nums[i]] = i => box[2] = 0 // box[ , , 0]
-i = 0 1  2
+box[nums[i]] = i => box[2] = 0 // box[ , , 0]
+                                  i = 0 1  2
 
 step.2
 box = [, , 0]
 i = 1; nums[1] = 7;
 if ((box[9 - 7]) !== undefined) // box[2] = 0
-  return ([box[9 - 7], 1]) // [0, 1]
+return ([box[9 - 7], 1]) // [0, 1]
 </pre>*/
 
 //<strong>Code 2:</strong>
-var twoSum = function(nums, target) {  
+var twoSum = function (nums, target) {
   for (let i = 0; i < nums.length; i++) {
-    let remainNum = target - nums[i]
+    let remainNum = target - nums[i];
     for (let j = i + 1; j <= nums.length; j++) {
-      if (nums[j] === remainNum) return [i, j]
+      if (nums[j] === remainNum) return [i, j];
     }
   }
 };
