@@ -12,20 +12,20 @@
 // 5. 將 box[] 數值放入對應的索引。
 // 6. 皆不符合，回傳 false。
 
-// <strong>Code:</strong>
+// <strong>Code 1: BigO(n)</strong>
 var containsNearbyDuplicate = function (nums, k) {
-  if (nums.length <= 1) return false //只有一個數值，條件不成立，故提前結束。
+  if (nums.length <= 1) return false; //只有一個數值，條件不成立，故提前結束。
 
-  let box = {}
+  let box = {};
   for (let i in nums) {
-    let j = nums[i]
+    let j = nums[i];
 
-    if (box[j] && ((i - box[j]) <= k)) {
-      return true
+    if (box[j] && i - box[j] <= k) {
+      return true;
     }
-    box[j] = i
+    box[j] = i;
   }
-  return false
+  return false;
 };
 
 /* <strong>Example 1</strong>
@@ -39,3 +39,32 @@ i = 1, j = 2, box[2] = undefined => false |box[2] = 1 => {'1': 0, '2': 1}
 i = 2, j = 3, box[3] = underfined => false |box[3] = 2 => {'1': 0, '2': 1, '3': 2}  
 i = 3, j = 1, box[1] && ((3 - box[1]) <= k) 
                //  0 && ((3 - 1) <= 3) => return true  */
+
+// <strong>Code 2: BigO(n)</strong>
+const containsNearbyDuplicate = function (nums, k) {
+  if (nums.length <= 1) return false;
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (map.has(nums[i]) && i - map.get(nums[i]) <= k) {
+      return true;
+    }
+    map.set(nums[i], i);
+  }
+  return false;
+};
+
+// <strong>Code 3: Sliding Window BigO(n)</strong>
+const containsNearbyDuplicate = function (nums, k) {
+  if (nums.length <= 1) return false;
+  const set = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(nums[i])) {
+      return true;
+    }
+    set.add(nums[i]);
+    if (set.size > k) {
+      set.delete(nums[i - k]);
+    }
+  }
+  return false;
+};
