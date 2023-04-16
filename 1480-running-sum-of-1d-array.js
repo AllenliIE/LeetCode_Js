@@ -9,13 +9,13 @@
 
 // <strong>Code 1:</strong>
 var runningSum = function (nums) {
-  let currentSum = 0
+  let currentSum = 0;
   for (i = 0; i < nums.length; i++) {
-    currentSum += nums[i]
-    nums[i] = currentSum
+    currentSum += nums[i];
+    nums[i] = currentSum;
   }
-  return nums
-}
+  return nums;
+};
 
 /* < strong > Example 1</strong >
 <pre style='background-color:#ggg'>
@@ -49,37 +49,38 @@ return nums //[1, 3, 6, 10]
 
 // <strong> Code 2: map</strong>
 var runningSum = function (nums) {
-  let currentSum = 0
-  return nums.map(num => currentSum += num)
-}
+  let currentSum = 0;
+  return nums.map((num) => (currentSum += num));
+};
 
-// <strong> Code 3:</strong>
+// <strong> Code 3: for loop BigO(n)</strong>
 var runningSum = function (nums) {
   for (let i = 1; i < nums.length; i++) {
-    nums[i] += nums[i - 1]
+    nums[i] += nums[i - 1];
   }
-  return nums
-}
+  return nums;
+};
 
-// <strong> Code 4:</strong>
+// <strong> Code 4: for + if BigO(n)</strong>
 var runningSum = function (nums) {
-  let newNums = []
+  let newNums = [];
 
   for (let i = 0; i < nums.length; i++) {
     if (i === 0) {
-      newNums[i] = nums[i]
+      newNums[i] = nums[i];
     } else {
-      newNums[i] = newNums[i - 1] + nums[i]
+      newNums[i] = newNums[i - 1] + nums[i];
     }
   }
   return newNums;
 };
 
-// <strong> Code 5:</strong>
-var runningSum = function(nums) {
-
-  for (let i = 1; i < nums.length; i++) {
-      nums[i] = nums[i - 1] + nums[i]
-  }
-  return nums;
+// <strong> Code 5: map BigO(n)</strong>
+var runningSum = function (nums) {
+  let sum = 0;
+  const runningSum = nums.map((num) => {
+    sum += nums;
+    return sum;
+  });
+  return runningSum;
 };
