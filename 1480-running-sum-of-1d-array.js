@@ -78,9 +78,22 @@ var runningSum = function (nums) {
 // <strong> Code 5: map BigO(n)</strong>
 var runningSum = function (nums) {
   let sum = 0;
-  const runningSum = nums.map((num) => {
+  const runningMap = nums.map((num) => {
     sum += nums;
     return sum;
   });
-  return runningSum;
+  return runningMap;
+};
+
+// <strong> Code 6: forEach BigO(n)</strong>
+var runningSum = function (nums) {
+  const runningArray = [];
+  nums.forEach((num, index) => {
+    if (index === 0) {
+      runningArray.push(num);
+    } else {
+      runningArray.push(runningArray[index - 1] + num);
+    }
+  });
+  return runningArray;
 };
