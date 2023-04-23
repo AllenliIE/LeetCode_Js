@@ -68,3 +68,16 @@ const containsNearbyDuplicate = function (nums, k) {
   }
   return false;
 };
+
+// <strong>Code 4: For Loop BigO(n)</strong>
+var containsNearbyDuplicate = function (nums, k) {
+  if (nums.length <= 1) return false;
+  const hashTable = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (hashTable[nums[i]] !== undefined && i - hashTable[nums[i]] <= k)
+      return true;
+    hashTable[nums[i]] = i;
+  }
+  return false;
+};
