@@ -2,25 +2,26 @@
 //Bubble: http://52.198.119.162/關於bubble-sort排序方法與示意圖/
 
 //<strong>Solution:</strong>
-//1. 宣告 count = 0
+//1. 宣告 index = 0
 //2. 使用 for 迴圈將 nums2 的值合併到nums1。
 //3. 雙 for 迴圈進行兩兩比對，當 nums1 > nums2 時，兩兩數字互換。
 
 //<strong> Code 1: BigO(n^2) </strong>
 var merge = function (nums1, m, nums2, n) {
-  let count = 0;
+  // let the index become the starting point
+  let index = 0;
 
+  // merge in reverse order
   for (let i = m; i < m + n; i++) {
-    nums1[i] = nums2[count];
-    count++;
+    nums1[i] = nums2[index];
+    index++;
   }
 
+  // use destructuring assignment to swap variables.
   for (let j = 0; j < nums1.length - 1; j++) {
     for (let k = j + 1; k < nums1.length; k++) {
       if (nums1[j] > nums1[k]) {
-        let box = nums1[j];
-        nums1[j] = nums1[k];
-        nums1[k] = box;
+        [nums1[j], nums1[k]] = [nums1[k], nums1[j]];
       }
     }
   }
@@ -34,19 +35,19 @@ step.1 let i = m //3
 i < (3 + 3) //6
 nums1[3] = nums2[0] //[1,2,3,0,0,0] => [1,2,3,0,0,0]
                                               2
-count++ //1
+index++ //1
 
 i++ //4
 i < (3 + 3) //6
 nums1[4] = nums2[1] //[1,2,3,2,0,0] => [1,2,3,2,0,0]
                                                 5
-count++ //2
+index++ //2
 
 i++ //5
 i < (3 + 3) //6
 nums1[5] = nums2[2] //[1,2,3,2,5,0] => [1,2,3,2,5,0]
                                                   6
-count++ //3
+index++ //3
 
 step.2 nums1 = [1,2,3,2,5,6] 
 j = 0, j < 5
@@ -94,14 +95,14 @@ var merge = function (nums1, m, nums2, n) {
 
 //<strong>Code 3: BigO(n log n)</strong>
 var merge = function (nums1, m, nums2, n) {
-  nums1.length = m
-  nums2.forEach(n => nums1.push(n));
-  return nums1.sort((a, b) => a-b);
+  nums1.length = m;
+  nums2.forEach((n) => nums1.push(n));
+  return nums1.sort((a, b) => a - b);
 };
 
 //<strong>Code 4: BigO(n log n)</strong>
 var merge = function (nums1, m, nums2, n) {
   nums1.splice(m, n, ...nums2);
-  
+
   return nums1.sort((a, b) => a - b);
 };
