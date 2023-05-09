@@ -20,7 +20,26 @@ var map = function (arr, fn) {
 <strong>Example 1</strong>
 Input: arr = [1,2,3], fn = function plusone(n) { return n + 1; }
 
-[2]
-[2,3]
-[2,3,4]
+fn(num)
+fn(1) 1 + 1 = 2 res.push(2) //res = [2]
+fn(2) 2 + 1 = 3 res.push(3) //res = [2, 3]
+fn(3) 3 + 1 = 4 res.push(4) //res = [2, 3, 4]
+</pre>
+
+<strong>Example 2</strong>
+Input: arr = [1,2,3], fn = function plusI(n, i) { return n + i; }
+
+fn(num, index)
+fn(1, 0) 1 + 0 = 1 res.push(1) //res = [1]
+fn(2, 1) 2 + 1 = 3 res.push(3) //res = [1, 3]
+fn(3, 2) 3 + 2 = 5 res.push(5) //res = [1, 3, 5]
+</pre>
+
+<strong>Example 3</strong>
+Input: arr = [10,20,30], fn = function constant() { return 42; }
+
+fn(num)
+fn(1) return 42 res.push(42) //res = [42]
+fn(2) return 42 res.push(42) //res = [42, 42]
+fn(3) return 42 res.push(42) //res = [42, 42, 42]
 </pre> */
