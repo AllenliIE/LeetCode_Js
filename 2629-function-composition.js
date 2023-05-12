@@ -43,3 +43,37 @@ functions.reduceRight((acc, cur) => cur(acc), x)
 functions.reduceRight((acc, cur) => cur(acc), 42)
 return 42;
 </pre> */
+
+// <strong>Code 2: BigO(n)</strong>
+var compose = function (functions) {
+  return function (x) {
+    return functions.reverse().reduce((acc, cur) => cur(acc), x);
+  };
+};
+
+// <strong>Code 3: BigO(n)</strong>
+var compose = function (functions) {
+  return function (x) {
+    while (functions.length) {
+      x = functions.pop()(x);
+    }
+    return x;
+  };
+};
+
+// <strong>Code 4: BigO(n)</strong>
+var compose = function (functions) {
+  //定義匿名函式，接受到x的參數後回傳x。
+  let temp = (x) => x;
+
+  return function recursion(x) {
+    //如果funcitons中沒有陣列元素，則呼叫temp匿名函式回傳x的值。
+    if (functions.length === 0) return temp(x);
+
+    //*重點，將x重新賦值為：移除functions中最右邊的陣列的同時，帶入(x)的參數進去執行取得結果。
+    x = functions.pop()(x);
+
+    //重複呼叫遞迴函式直到陣列中無元素。
+    return recursion(x);
+  };
+};
