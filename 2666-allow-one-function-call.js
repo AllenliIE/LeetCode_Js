@@ -46,3 +46,17 @@ var once = function (fn) {
     }
   };
 };
+
+// <strong>Code 3: BigO(1)</strong>
+var once = function (fn) {
+  let condition = false;
+
+  return function (...args) {
+    if (condition) {
+      return undefined;
+    } else {
+      condition = true;
+      return fn.apply(this, args);
+    }
+  };
+};
