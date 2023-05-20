@@ -6,7 +6,7 @@
 // 只有在最後一次呼叫 debounce 函式後，計時器結束後才會執行傳入的函式。
 // ex. 例如處理使用者輸入、監聽事件。
 
-// <strong>Code 1: BigO(1)</strong>
+// <strong>Code 1: debounce BigO(1)</strong>
 var debounce = function (fn, t) {
   let timeout;
   return function (...args) {
