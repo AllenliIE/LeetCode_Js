@@ -7,14 +7,14 @@
 // 直到長度為 0，同時將該元素用 push 放到 list 陣列中，並回傳 list。
 
 // <strong>Code 1: BigO(n)</strong>
-var chunk = function(arr, size) {
-    if (arr.length < size) return arr.length ? [arr] : []
+var chunk = function (arr, size) {
+  if (arr.length < size) return arr.length ? [arr] : [];
 
-    const list  = []
-    while (arr.length) {
-        list.push(arr.splice(0, size))
-    }
-    return list;
+  const res = [];
+  while (arr.length) {
+    res.push(arr.splice(0, size));
+  }
+  return res;
 };
 
 /* <strong>FlowChart:</strong>
@@ -55,3 +55,13 @@ console.log(chunk([], 1))
 []
 //Output: []
 </pre> */
+
+// <strong>Code 2: BigO(n)</strong>
+var chunk = function (arr, size) {
+  let res = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    res.push(arr.slice(i, i + size));
+  }
+  return res;
+};
