@@ -10,19 +10,18 @@
 
 // <strong>Code:</strong>
 var majorityElement = function (nums) {
-  if (nums.length === 1) return nums[0]
+  if (nums.length === 1) return nums[0];
 
-  let box = {}
+  let box = {};
 
   for (let i = 0; i < nums.length; i++) {
-
     if (!box[nums[i]]) {
-      box[nums[i]] = 1
+      box[nums[i]] = 1;
     } else {
-      box[nums[i]]++
+      box[nums[i]]++;
 
       if (box[nums[i]] >= nums.length / 2) {
-        return nums[i]
+        return nums[i];
       }
     }
   }
@@ -49,3 +48,39 @@ box = {'2': 1, '3': 1}
 box[nums[2]]++ => {'2': 1, '3': 2}
 (box[nums[2]] >= nums.length / 2) //{'3'} 2 >= (3/2)=> 2 >= 1.5
 return nums[2] //3 */
+
+// <strong>Code 2: BigO(n)</strong>
+var majorityElement = function (nums) {
+  if (nums.length === 1) return nums[0];
+
+  let target = 0,
+    counter = 0;
+
+  nums.forEach((item) => {
+    if (counter === 0) {
+      target = item;
+      counter++;
+    } else if (target === item) {
+      counter++;
+    } else {
+      counter--;
+    }
+  });
+  return target;
+};
+
+// <strong>Code 3: BigO(n)</strong>
+var majorityElement = function (nums) {
+  if (nums.length === 1) return nums[0];
+
+  let target,
+    counter = 0;
+
+  for (const num of nums) {
+    if (counter === 0) {
+      target = num;
+    }
+    counter += num === target ? 1 : -1;
+  }
+  return target;
+};
