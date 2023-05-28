@@ -49,7 +49,7 @@ box[nums[2]]++ => {'2': 1, '3': 2}
 (box[nums[2]] >= nums.length / 2) //{'3'} 2 >= (3/2)=> 2 >= 1.5
 return nums[2] //3 */
 
-// <strong>Code 2: BigO(n)</strong>
+// <strong>Code 2: Boyer–Moore majority vote algorithm BigO(n)</strong>
 var majorityElement = function (nums) {
   if (nums.length === 1) return nums[0];
 
@@ -69,7 +69,7 @@ var majorityElement = function (nums) {
   return target;
 };
 
-// <strong>Code 3: BigO(n)</strong>
+// <strong>Code 3: Boyer–Moore majority vote algorithm BigO(n)</strong>
 var majorityElement = function (nums) {
   if (nums.length === 1) return nums[0];
 
@@ -85,7 +85,7 @@ var majorityElement = function (nums) {
   return target;
 };
 
-// <strong>Code 4: BigO(m + n)</strong>
+// <strong>Code 4: HashTable BigO(m + n)</strong>
 var majorityElement = function (nums) {
   if (nums.length === 1) return nums[0];
 
