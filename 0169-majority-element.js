@@ -53,19 +53,19 @@ return nums[2] //3 */
 var majorityElement = function (nums) {
   if (nums.length === 1) return nums[0];
 
-  let target = 0,
+  let target,
     counter = 0;
 
-  nums.forEach((item) => {
+  for (const num of nums) {
     if (counter === 0) {
-      target = item;
+      target = num;
       counter++;
-    } else if (target === item) {
+    } else if (target === num) {
       counter++;
     } else {
       counter--;
     }
-  });
+  }
   return target;
 };
 
