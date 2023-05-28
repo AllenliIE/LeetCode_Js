@@ -84,3 +84,18 @@ var majorityElement = function (nums) {
   }
   return target;
 };
+
+// <strong>Code 4: BigO(m + n)</strong>
+var majorityElement = function (nums) {
+  if (nums.length === 1) return nums[0];
+
+  let hashTable = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    hashTable[nums[i]] = (hashTable[nums[i]] || 0) + 1;
+  }
+
+  for (let num in hashTable) {
+    if (hashTable[num] >= nums.length / 2) return num;
+  }
+};
