@@ -73,7 +73,7 @@ var majorityElement = function (nums) {
 var majorityElement = function (nums) {
   if (nums.length === 1) return nums[0];
 
-  let target,
+  let target = 0,
     counter = 0;
 
   for (const num of nums) {
