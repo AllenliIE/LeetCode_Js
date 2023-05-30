@@ -44,7 +44,7 @@ console.log(func()); //true
 </pre>
 
 Other Example
-<strong>Example 4</strong>
+<strong>Example 5</strong>
 var func = () => checkIfInstanceOf(0, null)
 console.log(typeof obj, typeof classFunction) //number function 
 console.log(func()); // false
