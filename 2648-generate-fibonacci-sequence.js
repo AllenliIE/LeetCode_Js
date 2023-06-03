@@ -48,3 +48,27 @@ var fibGenerator = function*() {
         [a, b] = [b, a + b]
     }
 };
+
+// <strong>Code 3: Closure BigO(n)</strong>
+function fibonacciGenerator() {
+  let a = 0;
+  let b = 1;
+
+  function getNextFibonacci() {
+    const result = a;
+    [a, b] = [b, a + b];
+    return result;
+  }
+
+  return getNextFibonacci;
+}
+
+const getNextFib = fibonacciGenerator();
+
+console.log(getNextFib()); // 0
+console.log(getNextFib()); // 1
+console.log(getNextFib()); // 1
+console.log(getNextFib()); // 2
+console.log(getNextFib()); // 3
+console.log(getNextFib()); // 5
+console.log(getNextFib()); // 8
