@@ -1,7 +1,7 @@
 //Blog: https://www.allenliservice.site/leetcode-javascript-30-days-challenge-day29-2648-generate-fibonacci-sequence/
 
 // <strong>solution:</strong>
-// 定義 generator 函式為一個斐波那契數列的生成器 fibGenerator：
+// 定義 generator (function*)生成器函式為一個斐波那契數列 fibGenerator：
 // 首先，定義初始化變數 a 為 0，變數 b 為 1，這是斐波那契數列的起始值。
 // 運用 while(true) 進入無窮迴圈，表示生成器會持續生成數列的項目。
 // 並在每次迭代中，使用 yield a 這個關鍵字，將目前的 a 的值作為生成器的輸出，並且暫停生成器的執行。
@@ -15,10 +15,11 @@
 var fibGenerator = function*() {
     let a = 0,
         b = 1
-    while(true) {
+    while (true) {
         yield a;
-        b += a
-        a = b - a
+        let temp = a
+        a = a + b
+        b = temp
     }
 };
 
@@ -37,3 +38,13 @@ console.log(gen.next().value); // 3
 <pre style='background-color:#ggg'>
 console.log(gen.next()); //{ value: 0, done: false }
 </pre> */
+
+// <strong>Code 2: BigO(n)</strong>
+var fibGenerator = function*() {
+    let a = 0,
+        b = 1
+    while (true) {
+        yield a;
+        [a, b] = [b, a + b]
+    }
+};
