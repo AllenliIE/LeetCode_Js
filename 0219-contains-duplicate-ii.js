@@ -54,17 +54,22 @@ const containsNearbyDuplicate = function (nums, k) {
 };
 
 // <strong>Code 3: Sliding Window BigO(n)</strong>
-const containsNearbyDuplicate = function (nums, k) {
+var containsNearbyDuplicate = function (nums, k) {
   if (nums.length <= 1) return false;
-  const set = new Set();
+  //hashTable
+  const set = new Set()
+  
+  //for 遍歷 nums.length
   for (let i = 0; i < nums.length; i++) {
-    if (set.has(nums[i])) return true;
 
-    set.add(nums[i]);
-    
-    if (set.size > k) {
-      set.delete(nums[i - k]);
-    }
+      //確認是否該數值重複出現
+      if (set.has(nums[i])) return true;
+      //新增 nums[i] 到 set
+      set.add(nums[i])
+      //超過 k 距離時，刪除 nums[i]
+      if (set.size > k) {
+          set.delete(nums[i - k])
+      }
   }
   return false;
 };
@@ -72,12 +77,17 @@ const containsNearbyDuplicate = function (nums, k) {
 // <strong>Code 4: For Loop BigO(n)</strong>
 var containsNearbyDuplicate = function (nums, k) {
   if (nums.length <= 1) return false;
-  const hashTable = {};
+  //建立空物件
+  const hashTable = {}
 
+  //for 迴圈遍歷 nums 長度
   for (let i = 0; i < nums.length; i++) {
-    if (hashTable[nums[i]] !== undefined && i - hashTable[nums[i]] <= k)
-      return true;
-    hashTable[nums[i]] = i;
+      //判斷當前的數值是否出現在物件裡，確認 <= k
+      if (hashTable[nums[i]] !== undefined && (i - hashTable[nums[i]]) <= k) {
+          return true;
+      }
+      //將陣列中的數值放入空物件中
+      hashTable[nums[i]] = i
   }
   return false;
 };
