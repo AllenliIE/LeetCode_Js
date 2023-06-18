@@ -13,21 +13,21 @@
 var maxArea = function (height) {
   let left = 0,
     right = height.length - 1,
-    max = (right - left) * Math.min(height[left], height[right])
+    max = (right - left) * Math.min(height[left], height[right]);
 
   while (right > left) {
     if (height[right] < height[left]) {
-      right--
+      right--;
     } else {
-      left++
+      left++;
     }
-    let currentMax = (right - left) * Math.min(height[left], height[right])
+    let currentMax = (right - left) * Math.min(height[left], height[right]);
     if (currentMax > max) {
-      max = currentMax
+      max = currentMax;
     }
     return max;
   }
-}
+};
 
 /*< strong > Example 1</strong >
   <pre style='background-color:#ggg'>
@@ -108,14 +108,13 @@ var maxArea = function (height) {
   </pre> */
 
 //< strong > Code 2:  Double for loop (BigO(n^2))</strong >
-var maxArea = function(height) {
-  let maxArea = 0
+var maxArea = function (height) {
+  let maxArea = 0;
   for (let i = 0; i < height.length; i++) {
-      for (let j = i + 1; j < height.length; j++) {
-        console.log(i, j)
-          let currentMaxArea = (j - i) * Math.min(height[i], height[j])
-          if (currentMaxArea > maxArea) maxArea = currentMaxArea
-      }
+    for (let j = i + 1; j < height.length; j++) {
+      let currentMaxArea = Math.min(height[i], height[j]) * (j - i);
+      if (currentMaxArea > maxArea) maxArea = currentMaxArea;
+    }
   }
   return maxArea;
 };
@@ -124,12 +123,14 @@ var maxArea = function(height) {
 var maxArea = function (height) {
   let startIndex = 0,
     endIndex = height.length - 1,
-    maxArea = 0
+    maxArea = 0;
 
   while (startIndex < endIndex) {
-    maxArea = Math.max(maxArea, Math.min(height[startIndex], height[endIndex]) * (endIndex - startIndex))
-    height[startIndex] <= height[endIndex] ? startIndex++ : endIndex--
+    maxArea = Math.max(
+      maxArea,
+      Math.min(height[startIndex], height[endIndex]) * (endIndex - startIndex)
+    );
+    height[startIndex] <= height[endIndex] ? startIndex++ : endIndex--;
   }
   return maxArea;
 };
-
