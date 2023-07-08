@@ -23,11 +23,12 @@ return 121 === 121 //true */
 var isPalindrome = function (x) {
   if (x < 0) return false;
 
-  let number = x;
-  let reverse = 0;
+  let number = x,
+    reverse = 0;
+
   while (number > 0) {
-    reverse = reverse * 10 + number % 10;
-    number = parseInt(number / 10)
+    reverse = reverse * 10 + (number % 10);
+    number = parseInt(number / 10);
   }
 
   return x === reverse;
@@ -36,5 +37,5 @@ var isPalindrome = function (x) {
 // < strong > Code 3:</strong >
 var isPalindrome = function (x) {
   if (x < 0) return false;
-  return `${x}` === `${x}`.split('').reverse().join('')
+  return `${x}` === `${x}`.split('').reverse().join('');
 };
