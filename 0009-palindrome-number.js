@@ -31,7 +31,7 @@ var isPalindrome = function (x) {
     number = parseInt(number / 10);
   }
 
-  return x === reverse;
+  return reverse === x;
 };
 
 // < strong > Code 3:</strong >
