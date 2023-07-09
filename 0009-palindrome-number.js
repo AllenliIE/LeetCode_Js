@@ -37,5 +37,5 @@ var isPalindrome = function (x) {
 // < strong > Code 3:</strong >
 var isPalindrome = function (x) {
   if (x < 0) return false;
-  return `${x}` === `${x}`.split('').reverse().join('');
+  return `${x}`.split('').reverse().join('') === `${x}`.toString();
 };
