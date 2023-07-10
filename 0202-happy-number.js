@@ -6,15 +6,17 @@
 // 3. 如果 n 是個位數，則由 0 開始加總。
 // 4. 最終判斷 n 是否等於 1。
 
-// <strong>Code 1:</strongc>
+// <strong>Code 1: bigO(n)</strongc>
 var isHappy = function (n) {
   while (n > 6) {
-    n.toString().split("").forEach(function (element, index) {
-      if (index === 0) n = 0
-      n += element * element
-    })
+    n.toString()
+      .split('')
+      .forEach(function (element, index) {
+        if (index === 0) n = 0;
+        n += element * element;
+      });
   }
-  return n === 1
+  return n === 1;
 };
 
 /* <strong>FlowChart:</strong>
@@ -27,3 +29,17 @@ n = 6^2 + 8&2 = 36 +64 = 100
 n = 1^2 + 0^2 + 0^2 = 1
 
 return n === 1 //true */
+
+// <strong>Code 2: bigO(n)</strongc>
+var isHappy = function (n) {
+  const set = new Set().add(1);
+  while (!set.has(n)) {
+    set.add(n);
+    let sum = 0;
+    for (let c of String(n)) {
+      sum += Number(c) * Number(c);
+    }
+    n = sum;
+  }
+  return n === 1;
+};
