@@ -33,7 +33,6 @@ return n === 1 //true */
 // <strong>Code 2: bigO(n)</strongc>
 var isHappy = function (n) {
   const set = new Set().add(1);
-
   while (!set.has(n)) {
     set.add(n);
     let sum = 0;
