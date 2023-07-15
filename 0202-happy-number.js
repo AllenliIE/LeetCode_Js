@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-202-happy-number/
+//Blog: http://allenliservice.site/leetcode-js-202-happy-number/
 
 // <strong>Solution:</strong>
 // 1. 因為最終會以個位數進行判斷，而 1 - 9 中只有 1, 7 是快樂數字，所以設定 while (n > 6) { }，小於 6 的數值直接判斷是否為 1。
@@ -33,12 +33,15 @@ return n === 1 //true */
 // <strong>Code 2: bigO(n)</strongc>
 var isHappy = function (n) {
   const set = new Set().add(1);
+  
   while (!set.has(n)) {
     set.add(n);
     let sum = 0;
+
     for (let c of String(n)) {
       sum += Number(c) * Number(c);
     }
+
     n = sum;
   }
   return n === 1;
