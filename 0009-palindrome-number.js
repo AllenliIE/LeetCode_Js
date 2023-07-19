@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-9-palindrome-number/
+//Blog: https://www.allenliservice.site/leetcode-js-9-palindrome-number/
 
 // <strong>Solution:</strong>
 // 1. 回傳 x 的判斷式：
@@ -9,7 +9,7 @@
 // < strong > Code 1:</strongc >
 var isPalindrome = function (x) {
   if (x <= 0) return false;
-  return x.toString().split('').reverse().join('') === x.toString();
+  return x.toString().split("").reverse().join("") === x.toString();
 };
 
 /* <strong>FlowChart:</strong>
@@ -37,5 +37,5 @@ var isPalindrome = function (x) {
 // < strong > Code 3:</strong >
 var isPalindrome = function (x) {
   if (x <= 0) return false;
-  return `${x}`.split('').reverse().join('') === `${x}`.toString();
+  return `${x}`.split("").reverse().join("") === `${x}`.toString();
 };
