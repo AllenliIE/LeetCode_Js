@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/05/18/leetcode-js-11-container-with-most-water/
+//Blog:https://www.allenliservice.site/leetcode-js-11-container-with-most-water/
 
 //<strong>solution:</strong>
 //1. 最大的x軸需取最左與最右，接下來做後續配對
