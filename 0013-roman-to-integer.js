@@ -1,29 +1,32 @@
-//Blog:http://52.198.119.162/2022/05/10/leetcode-js-13-roman-to-integer/
+//Blog:https://www.allenliservice.site/leetcode-js-13-roman-to-integer/
 
 // < strong > Code 1:</strong >
 var romanToInt = function (s) {
-  const romanMap = { //建立羅馬轉換表
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000
-  }
+  const romanMap = {
+    //建立羅馬轉換表
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
 
-  let total = 0 //宣告待數字加總的空間
+  let total = 0; //宣告待數字加總的空間
 
-  for (let i = 0; i < s.length; i++) { //input字串決定i迴圈次數
-    if (romanMap[s[i]] < romanMap[s[i + 1]]) { //如果 i 小於 i+1
-      total += romanMap[s[i + 1]] - romanMap[s[i]] //羅馬數字的規則，後面數字比前面大，須將後面減前面值
-      i++ //i進到下一個順位
+  for (let i = 0; i < s.length; i++) {
+    //input字串決定i迴圈次數
+    if (romanMap[s[i]] < romanMap[s[i + 1]]) {
+      //如果 i 小於 i+1
+      total += romanMap[s[i + 1]] - romanMap[s[i]]; //羅馬數字的規則，後面數字比前面大，須將後面減前面值
+      i++; //i進到下一個順位
     } else {
-      total += romanMap[s[i]]
+      total += romanMap[s[i]];
     }
   }
-  return total
-}
+  return total;
+};
 
 /*  < strong > FlowChart:</strong>
 <pre style='background-color:#ggg'>
@@ -70,20 +73,21 @@ Output = 1994
 
 // < strong > Code 2:</strong >
 var romanToInt = function (s) {
-  const romanMap = { //建立羅馬轉換表
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000
-  }
-  let i = 0
-  let total = 0 //宣告待數字加總的空間
+  const romanMap = {
+    //建立羅馬轉換表
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+  let i = 0;
+  let total = 0; //宣告待數字加總的空間
 
   while (i < s.length) {
-    if (romanMap[s[i]] < romanMap[s[i + 1]] && i != (s.length - 1)) {
+    if (romanMap[s[i]] < romanMap[s[i + 1]] && i != s.length - 1) {
       total += romanMap[s[i + 1]] - romanMap[s[i]];
       i += 2;
     } else {
@@ -91,6 +95,5 @@ var romanToInt = function (s) {
       i++;
     }
   }
-  return total
+  return total;
 };
-
