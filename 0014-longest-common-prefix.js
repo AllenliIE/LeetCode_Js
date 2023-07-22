@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/06/08/leetcode-js-14-longest-common-prefix/
+//Blog:https://www.allenliservice.site/leetcode-js-14-longest-common-prefix/
 
 //<strong>Solution:</strong>
 // 1. 先排除input不是字串的狀況(小優化)。(ex.傳入空值)
@@ -7,15 +7,15 @@
 
 //<strong>Code 1:</strong>
 var longestCommonPrefix = function (strs) {
-  if (!strs.length) return ""
-  let prefix = ""
+  if (!strs.length) return "";
+  let prefix = "";
   for (let i = 0; i < strs[0].length; i++) {
     for (let j = 0; j < strs.length - 1; j++) {
       if (strs[j][i] !== strs[j + 1][i]) return prefix;
     }
-    prefix += strs[0][i]
+    prefix += strs[0][i];
   }
-  return prefix
+  return prefix;
 };
 
 /* <strong>Example 1</strong>
@@ -41,18 +41,18 @@ return prefix = ['fl']
 
 //<strong>Code 2:</strong>
 var longestCommonPrefix = function (strs) {
-  if (!strs.length) return ""
-  let prefix = ""
-  let x = Math.min(...strs.map(o => o.length))
+  if (!strs.length) return "";
+  let prefix = "";
+  let x = Math.min(...strs.map((o) => o.length));
 
   for (let i = 0; i < x; i++) {
-    let char = strs[0][i]
+    let char = strs[0][i];
 
-    if (strs.every(str => str[i] === char)) {
-      prefix += char
+    if (strs.every((str) => str[i] === char)) {
+      prefix += char;
     } else {
-      break
+      break;
     }
   }
-  return prefix
+  return prefix;
 };
