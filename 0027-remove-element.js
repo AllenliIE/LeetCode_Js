@@ -1,18 +1,19 @@
-//Blog:http://52.198.119.162/2022/05/09/leetcode-js-27-remove-element/
+//Blog:https://www.allenliservice.site/leetcode-js-27-remove-element/
 
 // <strong>Code 1:</strong>
 var removeElement = function (nums, val) {
-  if (!nums) return 0
+  if (!nums) return 0;
 
-  let k = 0
+  let k = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) { //如果nums[i]不等於2
-      nums[k] = nums[i] //將原陣列的第k個的值，變更成第i個的值
-      k++ //k往下一位進行判斷
+    if (nums[i] !== val) {
+      //如果nums[i]不等於2
+      nums[k] = nums[i]; //將原陣列的第k個的值，變更成第i個的值
+      k++; //k往下一位進行判斷
     }
   }
-  return k
+  return k;
 };
 
 /*  < strong > FlowChart:</strong>
@@ -72,11 +73,11 @@ var removeElement = function (nums, val) {
 
 // <strong>Code 2:</strong>
 var removeElement = function (nums, val) {
-  let index = nums.indexOf(val)
+  let index = nums.indexOf(val);
 
   while (index !== -1) {
-    nums.splice(index, 1)
-    index = nums.indexOf(val)
+    nums.splice(index, 1);
+    index = nums.indexOf(val);
   }
-  return nums.length
+  return nums.length;
 };
