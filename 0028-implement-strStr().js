@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/06/19/leetcode-js-28-implement-strstr/
+//Blog:https://www.allenliservice.site/leetcode-js-28-implement-strstr/
 
 //<strong>Solution:</strong>
 //1. if「needle」是空值，回傳0
@@ -9,14 +9,14 @@
 //4.正確回傳陣列起點值，錯誤回傳 - 1
 
 var strStr = function (haystack, needle) {
-  if (!needle) return 0
-  if (!haystack || needle.length > haystack.length) return -1
+  if (!needle) return 0;
+  if (!haystack || needle.length > haystack.length) return -1;
 
   for (i = 0; i < haystack.length; i++) {
-    let str = haystack.substr(i, needle.length)
-    if (str === needle) return i
+    let str = haystack.substr(i, needle.length);
+    if (str === needle) return i;
   }
-  return -1
+  return -1;
 };
 
 /* <strong>Example 1</strong>
@@ -39,7 +39,7 @@ return i // i = 2
 
 // <strong>Code 2:</strong>
 var strStr = function (haystack, needle) {
-  return haystack.indexOf(needle)
+  return haystack.indexOf(needle);
 };
 
 // <strong>Code 3:</strong>
