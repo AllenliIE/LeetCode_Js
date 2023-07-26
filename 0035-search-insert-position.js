@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/06/29/leetcode-js-35-search-insert-position/
+//Blog:https://www.allenliservice.site/leetcode-js-35-search-insert-position/
 
 // <strong>Solution:</strong>
 // 1. 先確認目標值是否存在陣列中，如「是」則回傳位置。
@@ -9,8 +9,8 @@
 // <strong>Code 1:</strong>
 var searchInsert = function (nums, target) {
   //運用indexOf指令比對並回傳位置
-  const targetIndex = nums.indexOf(target)
-  if (targetIndex >= 0) return targetIndex //若不存在於陣列中，則indexOf()會回傳 -1。
+  const targetIndex = nums.indexOf(target);
+  if (targetIndex >= 0) return targetIndex; //若不存在於陣列中，則indexOf()會回傳 -1。
 
   //使用for依序比對目標與陣列值得大小
   for (let i = 0; i < nums.length; i++) {
@@ -34,25 +34,25 @@ return targetIndex //targetIndex = 2
 
 // <strong>Code 2:</strong>
 var searchInsert = function (nums, target) {
-  nums.push(target)
-  nums.sort((a, b) => a - b)
+  nums.push(target);
+  nums.sort((a, b) => a - b);
   return nums.indexOf(target);
 };
 
 // <strong>Code 3:</strong>
 var searchInsert = function (nums, target) {
-  const targetIndex = nums.indexOf(target)
+  const targetIndex = nums.indexOf(target);
   if (targetIndex >= 0) return targetIndex;
 
   while (left <= right) {
-    const middle = Math.floor((left + right) / 2)
+    const middle = Math.floor((left + right) / 2);
 
     if (nums[middle] === target) {
-        return middle;
+      return middle;
     } else if (nums[middle] > target) {
-        right = middle - 1
+      right = middle - 1;
     } else if (nums[middle] < target) {
-        left = middle + 1
+      left = middle + 1;
     }
   }
   return right + 1;
