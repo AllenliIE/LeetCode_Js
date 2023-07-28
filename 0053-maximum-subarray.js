@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/07/28/leetcode-js-53-maximum-subarray/
+//Blog:https://www.allenliservice.site/leetcode-js-53-maximum-subarray/
 
 // <strong>Solution:</strong>
 // 1. 先設定初始值為 nums[0]
@@ -9,12 +9,14 @@
 
 // <strong>Code 1:</strong>
 var maxSubArray = function (nums) {
-  let response = nums[0]
+  let response = nums[0];
   for (let i = 1; i < nums.length; ++i) {
-    if (nums[i - 1] > 0) { nums[i] += nums[i - 1] }
-    response = Math.max(response, nums[i])
+    if (nums[i - 1] > 0) {
+      nums[i] += nums[i - 1];
+    }
+    response = Math.max(response, nums[i]);
   }
-  return response
+  return response;
 };
 
 /* <strong>Example 1</strong>
@@ -81,21 +83,20 @@ response = Math.max(response, nums[i]) => Math.max(6, 5)
 return response = 6
 </pre> */
 
-
 // <strong>Code 2:</strong>  ex.Time Limit Exceeded
 var maxSubArray = function (nums) {
-  let max = Math.min.apply(null, nums)
+  let max = Math.min.apply(null, nums);
 
   for (i = 0; i < nums.length; i++) {
-    let sum = 0
+    let sum = 0;
 
     for (j = i; j < nums.length; j++) {
-      sum += nums[j]
+      sum += nums[j];
 
       if (sum > max) {
-        max = sum
+        max = sum;
       }
     }
   }
-  return max
+  return max;
 };
