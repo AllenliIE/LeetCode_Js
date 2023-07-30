@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-62-unique-paths/
+//Blog: https://www.allenliservice.site/leetcode-js-62-unique-paths/
 
 // <strong>Solution:</strong>
 // 1. 宣告存放數值的陣列。(ex. [[0, 0, 0],[0, 0, 0]]
@@ -15,13 +15,15 @@
 // <strong>Code.1: Method of exhaustion 窮舉</strong>
 var uniquePaths = function (m, n) {
   const searchPath = (m, n, row, column) => {
-    if (row === m && column === n) return 1
-    if (row > m || column > n) return 0
+    if (row === m && column === n) return 1;
+    if (row > m || column > n) return 0;
 
-    return searchPath(m, n, row, column + 1) + searchPath(m, n, row + 1, column)
-  }
+    return (
+      searchPath(m, n, row, column + 1) + searchPath(m, n, row + 1, column)
+    );
+  };
 
-  return searchPath(m, n, 1, 1)
+  return searchPath(m, n, 1, 1);
 };
 
 /* section.1 
@@ -52,18 +54,17 @@ m = 3, n = 2, r = row, c = column
 且剛好 row === m，與 column === n」的時候，回傳 1，
 最後加總所有的 1。 */
 
-
 // <strong>Code.2: Method of Recursion and Hashmap 遞迴和散列圖</strong>
 var uniquePaths = function (m, n) {
-  let temp = {}
+  let temp = {};
 
   const searchPath = function (m, n, temp) {
-    if (m === 1 || n === 1) return 1
-    temp[`${m}-${n}`] = searchPath(m - 1, n, temp) + searchPath(m, n - 1, temp)
-    console.log(temp)
-    return temp[`${m}-${n}`]
-  }
-  return searchPath(m, n, temp)
+    if (m === 1 || n === 1) return 1;
+    temp[`${m}-${n}`] = searchPath(m - 1, n, temp) + searchPath(m, n - 1, temp);
+    console.log(temp);
+    return temp[`${m}-${n}`];
+  };
+  return searchPath(m, n, temp);
 };
 
 /* section.1 
@@ -91,22 +92,20 @@ m = 3, n = 2, r = row, c = column
 
 //<strong>Code.3: Method of Dynamic Programming 動態規劃</strong>
 var uniquePaths = function (m, n) {
-  let temp = new Array(m + 1).fill(1).map(x => new Array(n + 1).fill(0));
+  let temp = new Array(m + 1).fill(1).map((x) => new Array(n + 1).fill(0));
 
   for (let i = 1; i <= m; i++) {
     for (let j = 1; j <= n; j++) {
-
       if (i === 1 && j === 1) {
-        temp[i][j] = 1
+        temp[i][j] = 1;
       } else {
-        temp[i][j] = temp[i - 1][j] + temp[i][j - 1]
+        temp[i][j] = temp[i - 1][j] + temp[i][j - 1];
       }
     }
-    console.log(temp)
+    console.log(temp);
   }
-  return temp[m][n]
-}
-
+  return temp[m][n];
+};
 
 /* < strong > FlowChart:</strong>
 <strong>Example 1: Method of Dynamic Programming 動態規劃</strong>
@@ -308,4 +307,3 @@ temp = [[  0,  0,  0,  0,   |
           10, 15, 21, 28 ]] |
 ----------------------------+
 */
-
