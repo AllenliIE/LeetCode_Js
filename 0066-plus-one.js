@@ -1,4 +1,4 @@
-//Blog:http://52.198.119.162/2022/07/07/leetcode-js-66-plus-one/
+//Blog:https://www.allenliservice.site/leetcode-js-66-plus-one/
 
 // <strong>Solution:</strong>
 // 1. 先陣列中的數字取出，由字串轉成數值。
@@ -10,16 +10,16 @@
 // <strong>Code 1:</strong>
 var plusOne = function (digits) {
   if (digits.length > 11) {
-    let digitsNum = BigInt(digits.join(''))
-    digitsNum++
-    digitsString = String(digitsNum)
-    return digitsString.split('')
+    let digitsNum = BigInt(digits.join(""));
+    digitsNum++;
+    digitsString = String(digitsNum);
+    return digitsString.split("");
   }
 
-  let digitsNum = Number(digits.join(''))
-  digitsNum++
-  digitsString = String(digitsNum)
-  return digitsString.split('')
+  let digitsNum = Number(digits.join(""));
+  digitsNum++;
+  digitsString = String(digitsNum);
+  return digitsString.split("");
 };
 
 /* <strong>Example 1</strong>
@@ -36,17 +36,17 @@ return digitsString.split('') = [1,2,4]
 var plusOne = function (digits) {
   for (let i = digits.length - 1; i >= 0; i--) {
     if (digits[i] !== 9) {
-      digits[i]++
-      return digits
+      digits[i]++;
+      return digits;
     } else {
-      digits[i] = 0
+      digits[i] = 0;
     }
   }
-  digits.unshift(1)
-  return digits
+  digits.unshift(1);
+  return digits;
 };
 
 // <strong>Code 3:</strong>
 var plusOne = function (digits) {
-  return (String(BigInt(digits.join("")) + BigInt(1))).split("")
+  return String(BigInt(digits.join("")) + BigInt(1)).split("");
 };
