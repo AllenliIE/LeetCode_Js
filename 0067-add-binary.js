@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/2022/07/16/leetcode-js-67-add-binary/
+//Blog: https://www.allenliservice.site/leetcode-js-67-add-binary/
 
 // <strong>Solution:</strong>
 // 1. 先了解二進位的規則。
@@ -12,14 +12,15 @@
 // 3. 此時在「個位」的位置變成「0」，且在「十位」的位置加「1」，依序計算。
 
 var addBinary = function (a, b) {
-  let result = "", carry = 0
+  let result = "",
+    carry = 0;
   for (let i = a.length - 1, j = b.length - 1; i >= 0 || j >= 0; i--, j--) {
-    if (i >= 0) carry += Number(a[i])
-    if (j >= 0) carry += Number(b[j])
-    result = (carry & 1) + result //使用 & 來找出carry 和 1 相同的二進制
+    if (i >= 0) carry += Number(a[i]);
+    if (j >= 0) carry += Number(b[j]);
+    result = (carry & 1) + result; //使用 & 來找出carry 和 1 相同的二進制
     carry >>= 1; //將carry的值右移
   }
-  return carry ? "1" + result : result
+  return carry ? "1" + result : result;
   //carry = 1 => true => "1" + result
   //carry = 0 => false =>   result
 };
