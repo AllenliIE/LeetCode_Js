@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-69-sqrtx/
+//Blog: https://www.allenliservice.site/leetcode-js-69-sqrtx/
 
 // <strong>Solution:</strong>
 // 1. 宣告 r 等於 x。
@@ -7,13 +7,13 @@
 
 // <strong>Code 1:</strong>
 var mySqrt = function (x) {
-  let r = x
+  let r = x;
 
   while (r * r > x) {
-    r = Math.floor((r + x / r) / 2)
+    r = Math.floor((r + x / r) / 2);
   }
 
-  return r
+  return r;
 };
 
 /* <strong>Example 1</strong>
