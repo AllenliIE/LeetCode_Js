@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/2022/07/10/leetcode-js-70-climbing-stairs/
+//Blog: https://www.allenliservice.site/leetcode-js-70-climbing-stairs/
 
 // <strong>Solution:</strong>
 // <pre style='background-color:#ggg'>
@@ -16,13 +16,13 @@
 // </pre>
 
 //<strong>Code 1: BigO(n)</strong>
-var climbStairs = function(n) {
+var climbStairs = function (n) {
   if (n <= 1) return 1;
   if (n === 2) return 2;
 
-  let newArray = [0, 1, 2]
+  let newArray = [0, 1, 2];
   for (let i = 3; i <= n; i++) {
-      newArray[i] = newArray[i - 2] + newArray[i - 1]
+    newArray[i] = newArray[i - 2] + newArray[i - 1];
   }
   return newArray[n];
 };
@@ -43,11 +43,11 @@ var climbStairs = function (n) {
   if (n <= 1) return 1;
   if (n === 2) return 2;
 
-  let [one, two] = [1, 1]
+  let [one, two] = [1, 1];
   for (let i = 2; i <= n; i++) {
-    let temp = one
-    one = one + two
-    two = temp
+    let temp = one;
+    one = one + two;
+    two = temp;
   }
   return one;
 };
