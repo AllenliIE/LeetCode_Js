@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-119-pascals-triangle-ii/
+//Blog: https://www.allenliservice.site/leetcode-js-119-pascals-triangle-ii/
 
 // <strong>Solution:</strong>
 // 1. 如果 rowIndex === 0，則回傳 [1]。
@@ -19,28 +19,28 @@
 //                 #
 // array-2th =  [1,1]  ->j
 // array-3th = [1,1,1] ->i
-//              O V 
+//              O V
 // </pre>
 
 // <strong>Code 1:</strong>
 var getRow = function (rowIndex) {
-  if (rowIndex === 0) return [1]
-  if (rowIndex === 1) return [1, 1]
+  if (rowIndex === 0) return [1];
+  if (rowIndex === 1) return [1, 1];
 
-  let array = [1]
+  let array = [1];
 
   for (let i = 1; i <= rowIndex; i++) {
-    let previous = array[i - 1]
+    let previous = array[i - 1];
 
     for (let j = 1; j < i; j++) {
-      let current = array[j] ? array[j] : 0
+      let current = array[j] ? array[j] : 0;
 
-      array[j] = previous + current
-      previous = current
+      array[j] = previous + current;
+      previous = current;
     }
-    array.push(1)
+    array.push(1);
   }
-  return array
+  return array;
 };
 
 /* <strong>FlowChart:</strong>
@@ -89,10 +89,10 @@ return array //[1,3,3,1]
 
 // <strong>Code 2:</strong>
 var getRow = function (rowIndex) {
-  let ans = new Array(rowIndex + 1)
+  let ans = new Array(rowIndex + 1);
 
-  ans[0] = ans[rowIndex] = 1
+  ans[0] = ans[rowIndex] = 1;
   for (i = 1, up = rowIndex; i < rowIndex; i++, up--)
-    ans[i] = ans[i - 1] * up / i
-  return ans
+    ans[i] = (ans[i - 1] * up) / i;
+  return ans;
 };
