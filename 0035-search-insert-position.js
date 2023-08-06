@@ -32,7 +32,7 @@ target =        5
 return targetIndex //targetIndex = 2
 </pre> */
 
-// <strong>Code 2:</strong>
+// <strong>Code 2: Binary Search</strong>
 var searchInsert = function (nums, target) {
   nums.push(target);
   nums.sort((a, b) => a - b);
@@ -56,4 +56,13 @@ var searchInsert = function (nums, target) {
     }
   }
   return right + 1;
+};
+
+//<strong>Code 4: for loop desc</strong>
+var searchInsert = function (nums, target) {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    if (target > nums[i]) return i + 1;
+    if (target === nums[i]) return i;
+  }
+  return 0;
 };
