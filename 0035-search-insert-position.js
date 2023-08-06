@@ -41,20 +41,24 @@ var searchInsert = function (nums, target) {
 
 // <strong>Code 3:</strong>
 var searchInsert = function (nums, target) {
-  const targetIndex = nums.indexOf(target);
-  if (targetIndex >= 0) return targetIndex;
-
+  //宣告nums的左右位置
+  let left = 0;
+  let right = nums.length - 1;
   while (left <= right) {
-    const middle = Math.floor((left + right) / 2);
-
+    //宣告中間的位置為整數
+    const middle = Math.floor(left + (right - left) / 2); //((left + right) / 2)
+    //如果目標值位在陣列中間，回傳中間位置
     if (nums[middle] === target) {
       return middle;
+      //如果目標值比陣列中間值大，把右邊位置往左一格
     } else if (nums[middle] > target) {
       right = middle - 1;
+      //如果目標值比陣列中間值小，把左邊位置往右一格
     } else if (nums[middle] < target) {
       left = middle + 1;
     }
   }
+  //如果目標值不在陣列內，新增在陣列最後一個位置(nums.length)
   return right + 1;
 };
 
