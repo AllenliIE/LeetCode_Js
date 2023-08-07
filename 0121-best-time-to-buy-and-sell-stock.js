@@ -1,4 +1,4 @@
-//Blog:  http://52.198.119.162/2022/08/11/leetcode-js-121-best-time-to-buy-and-sell-stock/
+//Blog: https://www.allenliservice.site/leetcode-js-121-best-time-to-buy-and-sell-stock/
 
 // <strong>Solution:</strong>
 // 1. 設定 min 為最大值，且起始的 profit 為 0。
@@ -10,16 +10,16 @@
 
 // <strong>Code 1:</strong>
 var maxProfit = function (prices) {
-  let min = Number.MAX_SAFE_INTEGER
-  let profit = 0
+  let min = Number.MAX_SAFE_INTEGER;
+  let profit = 0;
 
   for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < min) min = prices[i]
+    if (prices[i] < min) min = prices[i];
 
-    let currentProfit = prices[i] - min
-    if (currentProfit > profit) profit = currentProfit
+    let currentProfit = prices[i] - min;
+    if (currentProfit > profit) profit = currentProfit;
   }
-  return profit
+  return profit;
 };
 
 /* < strong > Example 1</strong >
