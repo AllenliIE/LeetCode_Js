@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-125-valid-palindrome/
+//Blog: https://www.allenliservice.site/leetcode-js-125-valid-palindrome/
 
 // <strong>Solution:</strong>
 // 1. Input s 轉換成小寫字母。
@@ -7,12 +7,12 @@
 // 4. 回傳 s 中符合 reverseWord，完全符合為 0，沒有符合為 -1。
 
 // <strong>Code:</strong>
-var isPalindrome = function(s) {
-  s = s.toLowerCase()
-  s = s.replace(/[^a-z0-9]/ig,"")
-  let reverseWord = s.split("").reverse().join("")
-  
-  return s.indexOf(reverseWord) === 0
+var isPalindrome = function (s) {
+  s = s.toLowerCase();
+  s = s.replace(/[^a-z0-9]/gi, "");
+  let reverseWord = s.split("").reverse().join("");
+
+  return s.indexOf(reverseWord) === 0;
 };
 
 /* <strong>FlowChart:</strong>
