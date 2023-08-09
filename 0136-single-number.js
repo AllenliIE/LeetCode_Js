@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-136-single-number/
+//Blog: https://www.allenliservice.site/leetcode-js-136-single-number/
 
 // <strong>Solution:</strong>
 // 1. 如果 nums 中只有一個數值，則返回該數值。
@@ -8,12 +8,12 @@
 
 // <strong>Code 1: BigO(2n) two for loop</strong>
 var singleNumber = function (nums) {
-  if (nums.length === 1) return nums[0]
+  if (nums.length === 1) return nums[0];
 
-  let box = {}
+  let box = {};
 
   for (let i = 0; i < nums.length; i++) {
-    box[nums[i]] = (box[nums[i]] || 0) + 1
+    box[nums[i]] = (box[nums[i]] || 0) + 1;
   }
 
   for (let num in box) {
@@ -24,7 +24,7 @@ var singleNumber = function (nums) {
 // <strong>Code 2: BigO(n) XOR</strong>
 var singleNumber = function (nums) {
   for (let i = 1; i < nums.length; i++) {
-    nums[0] ^= nums[i]
+    nums[0] ^= nums[i];
   }
   return nums[0];
 };
