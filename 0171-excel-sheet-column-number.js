@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-171-excel-sheet-column-number/
+//Blog: https://www.allenliservice.site/leetcode-js-171-excel-sheet-column-number/
 
 // <strong>solution:</strong>
 // 1. 宣告 sum 作為數值計算的變數，以及 EXP 作為數值的次方。
@@ -24,14 +24,14 @@
 // </pre>
 
 // <strong>Code 1:</strong>
-var titleToNumber = function(columnTitle) {
-    let sum = 0;
-    for (let i = 0; i < columnTitle.length; i++) {
-        let EXP = columnTitle.length - 1 - i;
-        sum += (columnTitle[i].charCodeAt(0) - 64) * (26 ** EXP);
-    }
-    
-    return sum;
+var titleToNumber = function (columnTitle) {
+  let sum = 0;
+  for (let i = 0; i < columnTitle.length; i++) {
+    let EXP = columnTitle.length - 1 - i;
+    sum += (columnTitle[i].charCodeAt(0) - 64) * 26 ** EXP;
+  }
+
+  return sum;
 };
 
 /* <strong>FlowChart:</strong>
