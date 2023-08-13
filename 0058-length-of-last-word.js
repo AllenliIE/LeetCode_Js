@@ -9,15 +9,15 @@
 //   array   0  1  2
 
 // <strong>Code 1: BigO(n)</strong>
-var lengthOfLastWord = function(s) {
-  let array = s.split(/\s/); 
+var lengthOfLastWord = function (s) {
+  let array = s.split(/\s/);
 
-  if(s.length === 0) return 0;
-  if(array.length === 0) return 0;
+  if (s.length === 0) return 0;
+  if (array.length === 0) return 0;
 
-  while(array.length > 0){
-      let lastWord = array.pop();
-      if(lastWord.length > 0) return lastWord.length;
+  while (array.length > 0) {
+    let lastWord = array.pop();
+    if (lastWord.length > 0) return lastWord.length;
   }
   return 0;
 };
@@ -36,18 +36,24 @@ return arr[arr.length - 1].length
 
 // <strong>Code 2: BigO(n)</strong>
 var lengthOfLastWord = function (s) {
-  const arr = s.trim().split(' ')
-  return arr[arr.length - 1].length
+  const arr = s.trim().split(" ");
+  return arr[arr.length - 1].length;
 };
 
 // <strong>Code 3: BigO(n)</strong>
 var lengthOfLastWord = function (s) {
-  if (s.length === 0) return 0
-  let arr = s.trim().split(' ')
+  if (s.length === 0) return 0;
+  let arr = s.trim().split(" ");
 
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i].length > 0) {
-      return arr[i].length
+      return arr[i].length;
     }
   }
+};
+
+// <strong>Code 3: BigO(n)</strong>
+var lengthOfLastWord = function (s) {
+  let array = s.trim().split(/\s/);
+  return array[array.length - 1].length;
 };
