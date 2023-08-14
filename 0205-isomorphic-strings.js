@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/2022/08/08/leetcode-js-205-isomorphic-strings/
+//Blog: https://www.allenliservice.site/leetcode-js-205-isomorphic-strings/
 
 // <strong>Solution:</strong>
 // 1. 先設定 objectS = {}, objectT = {}。
@@ -11,18 +11,19 @@
 var isIsomorphic = function (s, t) {
   if (s.length !== t.length) return false;
 
-  let objectS = {}, objectT = {}
+  let objectS = {},
+    objectT = {};
 
   for (let i = 0; i < s.length; i++) {
     if (objectS[s[i]] === objectT[t[i]]) {
-      objectS[s[i]] = i
-      objectT[t[i]] = i
+      objectS[s[i]] = i;
+      objectT[t[i]] = i;
     } else {
       return false;
     }
   }
   return true;
-}
+};
 
 /* < strong > Example 1</strong >
 <pre style='background-color:#ggg'>
@@ -57,4 +58,4 @@ var isIsomorphic = function (s, t) {
     if (s.indexOf(s[i]) !== t.indexOf(t[i])) return false;
   }
   return true;
-}
+};
