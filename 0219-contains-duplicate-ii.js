@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-219-contains-duplicate-ii/
+//Blog: https://www.allenliservice.site/leetcode-js-219-contains-duplicate-ii/
 
 // <strong>Solution:</strong>
 // 1. 判斷是否有重複的數字，沒有直接返回 false。
@@ -57,19 +57,18 @@ const containsNearbyDuplicate = function (nums, k) {
 var containsNearbyDuplicate = function (nums, k) {
   if (nums.length <= 1) return false;
   //hashTable
-  const set = new Set()
-  
+  const set = new Set();
+
   //for 遍歷 nums.length
   for (let i = 0; i < nums.length; i++) {
-
-      //確認是否該數值重複出現
-      if (set.has(nums[i])) return true;
-      //新增 nums[i] 到 set
-      set.add(nums[i])
-      //超過 k 距離時，刪除 nums[i]
-      if (set.size > k) {
-          set.delete(nums[i - k])
-      }
+    //確認是否該數值重複出現
+    if (set.has(nums[i])) return true;
+    //新增 nums[i] 到 set
+    set.add(nums[i]);
+    //超過 k 距離時，刪除 nums[i]
+    if (set.size > k) {
+      set.delete(nums[i - k]);
+    }
   }
   return false;
 };
@@ -78,16 +77,16 @@ var containsNearbyDuplicate = function (nums, k) {
 var containsNearbyDuplicate = function (nums, k) {
   if (nums.length <= 1) return false;
   //建立空物件
-  const hashTable = {}
+  const hashTable = {};
 
   //for 迴圈遍歷 nums 長度
   for (let i = 0; i < nums.length; i++) {
-      //判斷當前的數值是否出現在物件裡，確認 <= k
-      if (hashTable[nums[i]] !== undefined && (i - hashTable[nums[i]]) <= k) {
-          return true;
-      }
-      //將陣列中的數值放入空物件中
-      hashTable[nums[i]] = i
+    //判斷當前的數值是否出現在物件裡，確認 <= k
+    if (hashTable[nums[i]] !== undefined && i - hashTable[nums[i]] <= k) {
+      return true;
+    }
+    //將陣列中的數值放入空物件中
+    hashTable[nums[i]] = i;
   }
   return false;
 };
