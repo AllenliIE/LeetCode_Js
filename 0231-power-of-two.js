@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-231-power-of-two/
+//Blog: https://www.allenliservice.site/leetcode-js-231-power-of-two/
 
 // <strong>Solution:</strong>
 // 1. 先判斷 n 為負數則為 false。
@@ -8,14 +8,14 @@
 
 // <strong>Code 1:</strong>
 var isPowerOfTwo = function (n) {
-  if (n <= 0) return false
-  if (n === 1) return true
+  if (n <= 0) return false;
+  if (n === 1) return true;
 
   while (n > 5) {
-    n = n / 2
+    n = n / 2;
   }
 
-  return n % 2 === 0
+  return n % 2 === 0;
 };
 
 /* <strong>FlowChart:</strong>
@@ -39,7 +39,7 @@ var isPowerOfTwo = function (n) {
   if (n === 1) return true;
   while (n >= 2) {
     if (n === 2) return true;
-    n = n / 2
+    n = n / 2;
   }
   return false;
 };
