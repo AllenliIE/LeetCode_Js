@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-268-missing-number/
+//Blog: https://www.allenliservice.site/leetcode-js-268-missing-number/
 
 // <strong>Solution:</strong>
 // 1. 宣告 result 為 0。
@@ -10,14 +10,14 @@
 // 5. 回傳 nums 的長度減去 result。
 
 /* <strong>Code 1: BigO(n)</strongc> */
-var missingNumber = function(nums) {
+var missingNumber = function (nums) {
   let length = nums.length,
-      numsTotal = 0
+    numsTotal = 0;
 
   if (length === 0) return 0;
 
   for (let i = 0; i < length; i++) {
-    numsTotal += nums[i] - i
+    numsTotal += nums[i] - i;
   }
 
   return length - numsTotal;
@@ -37,35 +37,34 @@ return length - numsTotal = 3 - 1 = 2
 
 // <strong>Code 2: BigO(2n)</strongc>
 var missingNumber = function (nums) {
-  let length = nums.length
-      lengthTotal = 0,
-      numsTotal = 0
-  
+  let length = nums.length;
+  (lengthTotal = 0), (numsTotal = 0);
+
   if (length === 0) return 0;
 
   for (let i = 0; i <= length; i++) {
-    lengthTotal += i
+    lengthTotal += i;
   }
   for (let i = 0; i < length; i++) {
-    numsTotal += nums[i]
+    numsTotal += nums[i];
   }
-  return lengthTotal - numsTotal;  
+  return lengthTotal - numsTotal;
 };
 
 /* <strong>Code 3: BigO(n) ES6 Set</strongc> */
-var missingNumber = function(nums) {
+var missingNumber = function (nums) {
   let numsSet = new Set(nums),
-  lostNumbers = []
+    lostNumbers = [];
 
   for (let i = 0; i <= nums.length; i++) {
-    if (!numsSet.has(i)) lostNumbers.push(i)
+    if (!numsSet.has(i)) lostNumbers.push(i);
   }
   return lostNumbers;
 };
 
 //<strong>Code 4: BigO(n) ES6 Set</strongc>
-var missingNumber = function(nums) {
-  let numsSet = new Set(nums)
+var missingNumber = function (nums) {
+  let numsSet = new Set(nums);
 
   for (let i = 0; i <= nums.length; i++) {
     if (!numsSet.has(i)) return i;
