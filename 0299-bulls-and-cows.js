@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-299-bulls-and-cows/
+//Blog: https://www.allenliservice.site/leetcode-js-299-bulls-and-cows/
 
 // <strong>Solution:</strong>
 // 1. 宣告 bull 和 cow 分別為 0，sBox 和 gBox 為[]。
@@ -9,27 +9,29 @@
 
 // <strong>Code:</strong>
 var getHint = function (secret, guess) {
-  let bull = 0, cow = 0
-  let sBox = [], gBox = []
+  let bull = 0,
+    cow = 0;
+  let sBox = [],
+    gBox = [];
 
   for (i = 0; i < guess.length; i++) {
     if (secret[i] === guess[i]) {
-      bull++
+      bull++;
     } else {
-      sBox.push(secret[i])
-      gBox.push(guess[i])
+      sBox.push(secret[i]);
+      gBox.push(guess[i]);
     }
   }
 
   for (j = 0; j < gBox.length; j++) {
-    let findIndex = sBox.indexOf(gBox[j])
+    let findIndex = sBox.indexOf(gBox[j]);
 
     if (findIndex !== -1) {
-      cow++
-      sBox[findIndex] = null
+      cow++;
+      sBox[findIndex] = null;
     }
   }
-  return bull + "A" + cow + "B"
+  return bull + "A" + cow + "B";
 };
 
 /* <strong>Example 1</strong>
