@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-338-counting-bits/
+//Blog: https://www.allenliservice.site/leetcode-js-338-counting-bits/
 
 // <strong>Solution:</strong>
 // 1. 建立 ans 陣列為[0]。
@@ -34,13 +34,13 @@
 
 // <strong>Code 1:</strongc>
 var countBits = function (n) {
-  if (n === 0) return [0]
-  let ans = [0]
+  if (n === 0) return [0];
+  let ans = [0];
 
   for (let i = 0; i <= n; i++) {
-    ans[i] = ans[Math.floor(i / 2)] + i % 2
+    ans[i] = ans[Math.floor(i / 2)] + (i % 2);
   }
-  return ans
+  return ans;
 };
 
 /* <strong>FlowChart:</strong>
