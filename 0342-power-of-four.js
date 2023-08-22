@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-342-power-of-four/
+//Blog: https://www.allenliservice.site/leetcode-js-342-power-of-four/
 
 // <strong>Solution:</strong>
 // 1. 先判斷 n 為負數則為 false。
@@ -8,14 +8,14 @@
 
 // <strong>Code 1:</strongc>
 var isPowerOfFour = function (n) {
-  if (n <= 0) return false
-  if (n === 1) return true
+  if (n <= 0) return false;
+  if (n === 1) return true;
 
   while (n > 5) {
-    n = n / 4
+    n = n / 4;
   }
 
-  return n % 4 === 0
+  return n % 4 === 0;
 };
 
 /* <strong>FlowChart:</strong>
