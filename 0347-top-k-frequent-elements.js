@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-347-top-k-frequent-elements/
+//Blog: https://www.allenliservice.site/leetcode-js-347-top-k-frequent-elements/
 
 // <strong>Solution:</strong>
 // 1. 宣告 object 為物件。
@@ -11,12 +11,13 @@
 
 // <strong>Code 1:</strongc>
 var topKFrequent = function (nums, k) {
-  let object = {}
-  for (let num of nums) object[num] = (object[num] || 0) + 1
+  let object = {};
+  for (let num of nums) object[num] = (object[num] || 0) + 1;
 
-  return Object.keys(object).sort((a, b) => object[b] - object[a]).slice(0, k)
+  return Object.keys(object)
+    .sort((a, b) => object[b] - object[a])
+    .slice(0, k);
 };
-
 
 /* <strong>FlowChart:</strong>
 <strong>Example 1</strong>
@@ -25,4 +26,3 @@ Input: nums = [1,1,1,2,2,3], k = 2
 
 object = { '1': 3, '2': 2, '3': 1 }
 return Object.keys(object).sort((a, b) => object[b] - object[a]).slice(0, 2) //[ '1', '2' ] */
-
