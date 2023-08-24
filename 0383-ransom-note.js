@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-383-ransom-note/
+//Blog: https://www.allenliservice.site/leetcode-js-383-ransom-note/
 
 // <strong>solution:</strong>
 // 1. 將 magazine 中的字串轉成陣列放入 array。
@@ -10,11 +10,11 @@
 
 // <strong>Code 1</strong>
 var canConstruct = function (ransomNote, magazine) {
-  let array = [...magazine]
+  let array = [...magazine];
   for (const element of ransomNote) {
-    const index = array.indexOf(element)
+    const index = array.indexOf(element);
     if (index < 0) return false;
-    array.splice(index, 1)
+    array.splice(index, 1);
   }
   return true;
 };
