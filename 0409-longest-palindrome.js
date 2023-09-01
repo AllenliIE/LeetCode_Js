@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-409-longest-palindrome/
+//Blog: https://www.allenliservice.site/leetcode-js-409-longest-palindrome/
 
 // <strong>Solution:</strong>
 // 1. 設定 hashTable 為 Object literals { }。
@@ -19,23 +19,23 @@
 
 // <strong>Code 1: BigO(n)</strong>
 var longestPalindrome = function (s) {
-  const hashTable = {}
+  const hashTable = {};
   let longestLength = 0,
-      condition = false
+    condition = false;
 
-  for (let i = 0; i < s.length; i++){
-    hashTable[s[i]] = (hashTable[s[i]] || 0) + 1
+  for (let i = 0; i < s.length; i++) {
+    hashTable[s[i]] = (hashTable[s[i]] || 0) + 1;
   }
   for (let value in hashTable) {
     if (hashTable[value] % 2 === 0) {
-      longestLength += hashTable[value]
+      longestLength += hashTable[value];
     } else {
-      condition = true
-      longestLength += hashTable[value] - 1
+      condition = true;
+      longestLength += hashTable[value] - 1;
     }
   }
 
-  if (condition) longestLength += 1
+  if (condition) longestLength += 1;
   return longestLength;
 };
 /* < strong > Example 1</strong >
@@ -80,15 +80,15 @@ return longestLength //7
 
 // <strong>Code 2: BigO(n)</strong>
 var longestPalindrome = function (s) {
-  const hashTable = new Set()
-  let longestLength = 0
+  const hashTable = new Set();
+  let longestLength = 0;
 
   for (let key of s) {
     if (hashTable.has(key)) {
-      longestLength += 2
-      hashTable.delete(key)
+      longestLength += 2;
+      hashTable.delete(key);
     } else {
-      hashTable.add(key)
+      hashTable.add(key);
     }
   }
   return longestLength + (hashTable.size > 0 ? 1 : 0);
