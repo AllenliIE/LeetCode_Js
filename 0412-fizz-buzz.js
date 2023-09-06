@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-412-fizz-buzz/
+//Blog: https://www.allenliservice.site/leetcode-js-412-fizz-buzz/
 
 // <strong>solution:</strong>
 // 1. 宣告一個 ans 陣列。
@@ -13,17 +13,17 @@
 
 // <strong>Code 1:</strong>
 var fizzBuzz = function (n) {
-  let ans = []
+  let ans = [];
 
   for (let i = 1; i <= n; i++) {
     if (i % 15 === 0) {
-      ans.push('FizzBuzz')
+      ans.push("FizzBuzz");
     } else if (i % 5 === 0) {
-      ans.push('Buzz')
+      ans.push("Buzz");
     } else if (i % 3 === 0) {
-      ans.push('Fizz')
+      ans.push("Fizz");
     } else {
-      ans.push(i + '')
+      ans.push(i + "");
     }
   }
   return ans;
@@ -54,11 +54,11 @@ return ans //["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz"
 
 // <strong>Code 2: Conditional(ternary) operator</strong>
 var fizzBuzz = function (n) {
-  let ans = []
+  let ans = [];
 
   for (let i = 1; i <= n; i++) {
-    s = ((i % 3 == 0 ? 'Fizz' : '') + (i % 5 == 0 ? 'Buzz' : '')) || (i + '');
-    ans.push(s)
+    s = (i % 3 == 0 ? "Fizz" : "") + (i % 5 == 0 ? "Buzz" : "") || i + "";
+    ans.push(s);
   }
   return ans;
 };
