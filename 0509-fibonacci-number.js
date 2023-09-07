@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-509-fibonacci-number/
+//Blog: https://www.allenliservice.site/leetcode-js-509-fibonacci-number/
 
 // <strong>Solution:</strong>
 // 1. 判斷 f(0) = 0 為 0, f(1) = 1 為 1。
@@ -7,13 +7,13 @@
 // <strong>Code.1:</strong>
 var fib = function (n) {
   if (n <= 0) {
-    return 0
+    return 0;
   } else if (n === 1) {
-    return 1
+    return 1;
   } else {
-    return fib(n - 1) + fib(n - 2)
+    return fib(n - 1) + fib(n - 2);
   }
-}
+};
 
 /* <strong>Example 1</strong>
 <pre style='background-color:#ggg'>
