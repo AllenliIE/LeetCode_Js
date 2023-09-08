@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-561-array-partition/
+//Blog: https://www.allenliservice.site/leetcode-js-561-array-partition/
 
 // <strong>solution:</strong>
 // 1. 宣告 sum 為 0，以便後續加總。
@@ -11,14 +11,14 @@
 // 4. 回傳 sum。
 
 // <strong>Code 1:</strong>
-var arrayPairSum = function(nums) {
-    let sum = 0
-    nums.sort((a, b) => a - b)
+var arrayPairSum = function (nums) {
+  let sum = 0;
+  nums.sort((a, b) => a - b);
 
-    for (let i = 0; i < nums.length; i += 2) {
-        sum += nums[i]
-    }
-    return sum;
+  for (let i = 0; i < nums.length; i += 2) {
+    sum += nums[i];
+  }
+  return sum;
 };
 
 /* <strong>Example 1</strong>
