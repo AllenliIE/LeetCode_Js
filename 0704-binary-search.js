@@ -1,5 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-704-binary-search/
-
+//Blog: https://www.allenliservice.site/leetcode-js-704-binary-search/
 
 // <strong>Solution:</strong>
 // 1. 設定 left 為 0， right 為 nums 的長度 - 1。
@@ -12,23 +11,24 @@
 
 // <strong>Code.1:</strong>
 var search = function (nums, target) {
-  let left = 0, right = nums.length - 1
+  let left = 0,
+    right = nums.length - 1;
 
   while (left <= right) {
-    let middle = Math.floor((left + right) / 2)
+    let middle = Math.floor((left + right) / 2);
 
     if (nums[middle] === target) {
-      return middle
+      return middle;
     } else if (nums[middle] > target) {
-      right = middle - 1
+      right = middle - 1;
     } else if (nums[middle] < target) {
-      left = middle + 1
+      left = middle + 1;
     }
   }
-  return -1
-}
+  return -1;
+};
 
 // <strong>Code.2:</strong>
 var search = function (nums, target) {
-  return nums.indexOf(target)
+  return nums.indexOf(target);
 };
