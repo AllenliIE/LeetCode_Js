@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-724-find-pivot-index/
+//Blog: https://www.allenliservice.site/leetcode-js-724-find-pivot-index/
 
 // <strong>Solution:</strong>
 // 1. 先設定 sum = 0, leftSum = 0。
@@ -10,19 +10,20 @@
 
 // <strong>Code:</strong>
 var pivotIndex = function (nums) {
-  let sum = 0, leftSum = 0
+  let sum = 0,
+    leftSum = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    sum += nums[i]
+    sum += nums[i];
   }
   for (let i = 0; i < nums.length; i++) {
-    sum -= nums[i]
+    sum -= nums[i];
 
-    if (leftSum === sum) return i
-    leftSum += nums[i]
+    if (leftSum === sum) return i;
+    leftSum += nums[i];
   }
-  return -1
-}
+  return -1;
+};
 
 /*< strong > Example 1</strong >
 <pre style='background-color:#ggg'>
