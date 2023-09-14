@@ -22,8 +22,7 @@ cost ---------|10 + 15 |   15   |
 
 // <strong>Code:</strong>
 var minCostClimbingStairs = function (cost) {
-  let step1 = cost[0],
-    step2 = cost[1];
+  let [step1, step2] = cost;
 
   for (let i = 2; i < cost.length; i++) {
     let temp = Math.min(step1, step2) + cost[i];
