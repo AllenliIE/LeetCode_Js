@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-746-min-cost-climbing-stairs/
+//Blog: https://www.allenliservice.site/leetcode-js-746-min-cost-climbing-stairs/
 
 // <strong>Solution:</strong>
 // 1. 宣告 step1 和 step2 分別為 10 和 15。
@@ -22,16 +22,17 @@ cost ---------|10 + 15 |   15   |
 
 // <strong>Code:</strong>
 var minCostClimbingStairs = function (cost) {
-  let step1 = cost[0], step2 = cost[1]
+  let step1 = cost[0],
+    step2 = cost[1];
 
   for (let i = 2; i < cost.length; i++) {
-    let temp = Math.min(step1, step2) + cost[i]
-    step1 = step2
-    step2 = temp
+    let temp = Math.min(step1, step2) + cost[i];
+    step1 = step2;
+    step2 = temp;
   }
 
-  return Math.min(step1, step2)
-}
+  return Math.min(step1, step2);
+};
 
 /* <strong>Example 1</strong>
 <pre style='background-color:#ggg'>
