@@ -1,4 +1,4 @@
-//Blog: http://52.198.119.162/leetcode-js-1929-concatenation-of-array/
+//Blog: https://www.allenliservice.site/leetcode-js-1929-concatenation-of-array/
 
 // <strong>Solution:</strong>
 // 1. 建立 ans = []
