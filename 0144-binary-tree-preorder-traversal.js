@@ -71,3 +71,18 @@ const rootNode = []
 <pre style='background-color:#ggg'>
 TreeNode { val: 1, left: null, right: null }
 </pre> */
+
+// <strong>Code 2: DFS</strong>
+var preorderTraversal = function (root) {
+  let result = [];
+  dfs(root);
+  return result;
+
+  function dfs(root) {
+    if (root === null) return;
+
+    result.push(root.val);
+    dfs(root.left);
+    dfs(root.right);
+  }
+};
