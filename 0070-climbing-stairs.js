@@ -20,11 +20,13 @@ var climbStairs = function (n) {
   if (n <= 1) return 1;
   if (n === 2) return 2;
 
-  let newArray = [0, 1, 2];
-  for (let i = 3; i <= n; i++) {
-    newArray[i] = newArray[i - 2] + newArray[i - 1];
+  let [one, two] = [1, 1];
+  for (let i = 2; i <= n; i++) {
+    let temp = one;
+    one = one + two;
+    two = temp;
   }
-  return newArray[n];
+  return one;
 };
 
 /* <strong>Example 1</strong>
@@ -43,11 +45,9 @@ var climbStairs = function (n) {
   if (n <= 1) return 1;
   if (n === 2) return 2;
 
-  let [one, two] = [1, 1];
-  for (let i = 2; i <= n; i++) {
-    let temp = one;
-    one = one + two;
-    two = temp;
+  let newArray = [0, 1, 2];
+  for (let i = 3; i <= n; i++) {
+    newArray[i] = newArray[i - 2] + newArray[i - 1];
   }
-  return one;
+  return newArray[n];
 };
