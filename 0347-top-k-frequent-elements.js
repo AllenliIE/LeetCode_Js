@@ -26,3 +26,16 @@ Input: nums = [1,1,1,2,2,3], k = 2
 
 object = { '1': 3, '2': 2, '3': 1 }
 return Object.keys(object).sort((a, b) => object[b] - object[a]).slice(0, 2) //[ '1', '2' ] */
+
+// <strong>Code 2: map</strong>
+var topKFrequent = function (nums, k) {
+  let object = {};
+
+  for (let num of nums) {
+    object[num] = (object[num] || 0) + 1;
+  }
+
+  return Object.keys(object)
+    .sort((a, b) => object[b] - object[a])
+    .splice(0, k);
+};
