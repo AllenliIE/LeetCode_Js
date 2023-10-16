@@ -29,13 +29,14 @@ return Object.keys(object).sort((a, b) => object[b] - object[a]).slice(0, 2) //[
 
 // <strong>Code 2: map</strong>
 var topKFrequent = function (nums, k) {
-  let object = {};
+  let map = new Map();
 
-  for (let num of nums) {
-    object[num] = (object[num] || 0) + 1;
+  for (const num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
   }
 
-  return Object.keys(object)
-    .sort((a, b) => object[b] - object[a])
-    .splice(0, k);
+  return Array.from(map)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, k)
+    .map(([num]) => num);
 };
