@@ -40,3 +40,24 @@ var topKFrequent = function (nums, k) {
     .slice(0, k)
     .map(([num]) => num);
 };
+
+// <strong>Code 3: bucket sort</strong>
+var topKFrequent = function (nums, k) {
+  const hashtable = {};
+  const bucket = [];
+  const result = [];
+
+  for (let num of nums) {
+    hashtable[num] = hashtable[num] ? ++hashtable[num] : 1;
+  }
+
+  for (let [num, freq] of Object.entries(hashtable)) {
+    bucket[freq] = bucket[freq] ? [...bucket[freq], num] : [num];
+  }
+
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]);
+    if (result.length === k) break;
+  }
+  return result;
+};
