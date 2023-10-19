@@ -9,7 +9,7 @@
 // 4. 使用 sort 排序搭配箭頭函式，將物件進行排序。
 // 5. 使用 slice 回傳 0~k 的陣列元素。
 
-// <strong>Code 1:</strongc>
+// <strong>Code 1: Object Key</strongc>
 var topKFrequent = function (nums, k) {
   let object = {};
   for (let num of nums) object[num] = (object[num] || 0) + 1;
