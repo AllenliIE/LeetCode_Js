@@ -1,7 +1,7 @@
 //Blog:https://www.allenliservice.site/leetcode-js-28-implement-strstr/
 
 //<strong>Solution:</strong>
-//1. if「needle」是空值，回傳0
+//1. if「needle」是空值，回傳-1
 //2. if「haystack」是空值或「needle.length」比「haystack.length」大，回傳 - 1
 //3. for迴圈跑haystack的長度，並運用.substr()帶入neeedle進行比較
 //ex.類似excel的MID函式，但.substr()會取陣列起點值，.substring()會取陣列終點值。
@@ -9,7 +9,7 @@
 //4.正確回傳陣列起點值，錯誤回傳 - 1
 
 var strStr = function (haystack, needle) {
-  if (!needle) return 0;
+  if (!needle) return -1;
   if (!haystack || needle.length > haystack.length) return -1;
 
   for (i = 0; i < haystack.length; i++) {
