@@ -8,6 +8,7 @@
 // (A1 = ABCDEF; =MID(A1,2,1); B )
 // 4.正確回傳陣列起點值，錯誤回傳-1
 
+// <strong>Code 1:</strong>
 var strStr = function (haystack, needle) {
   if (!needle) return -1;
   if (!haystack || needle.length > haystack.length) return -1;
@@ -48,4 +49,16 @@ const strStr = (haystack, needle) => haystack.search(needle);
 // <strong>Code 4:</strong>
 var strStr = function (haystack, needle) {
   return haystack.includes(needle) ? haystack.indexOf(needle) : -1;
+};
+
+// <strong>Code 5:</strong>
+var strStr = function (haystack, needle) {
+  if (!needle) return -1;
+  if (!haystack || needle.length > haystack.length) return -1;
+
+  for (i = 0; i < haystack.length; i++) {
+    let str = haystack.substr(i, needle.length);
+    if (str === needle) return i;
+  }
+  return -1;
 };
