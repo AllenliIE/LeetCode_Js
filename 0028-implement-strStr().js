@@ -8,7 +8,7 @@
 // (A1 = ABCDEF; =MID(A1,2,1); B )
 // 4.正確回傳陣列起點值，錯誤回傳-1
 
-// <strong>Code 1:</strong>
+// <strong>Code 1: BigO(n * m)</strong>
 var strStr = function (haystack, needle) {
   if (!needle) return -1;
   if (!haystack || needle.length > haystack.length) return -1;
@@ -51,7 +51,7 @@ var strStr = function (haystack, needle) {
   return haystack.includes(needle) ? haystack.indexOf(needle) : -1;
 };
 
-// <strong>Code 5:</strong>
+// <strong>Code 5: BigO(n * m)</strong>
 var strStr = function (haystack, needle) {
   if (!needle) return -1;
   if (!haystack || needle.length > haystack.length) return -1;
