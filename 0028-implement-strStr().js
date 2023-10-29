@@ -38,15 +38,15 @@ str = haystack.length(1, 2) => "ll" === "ll"
 return i // i = 2
 </pre> */
 
-// <strong>Code 2:</strong>
+// <strong>Code 2: Big O(n * m)</strong>
 var strStr = function (haystack, needle) {
   return haystack.indexOf(needle);
 };
 
-// <strong>Code 3:</strong>
+// <strong>Code 3: Big O(n * m)</strong>
 const strStr = (haystack, needle) => haystack.search(needle);
 
-// <strong>Code 4:</strong>
+// <strong>Code 4: Big O(n * m)</strong>
 var strStr = function (haystack, needle) {
   return haystack.includes(needle) ? haystack.indexOf(needle) : -1;
 };
