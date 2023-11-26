@@ -26,3 +26,8 @@ Input: n = 16
 while (16 > 5) {n = 16 / 4} //n = 4
 return 4 % 4 === 0 //true
 </pre> */
+
+// <strong>Code 2: Bit Manipulation</strong>
+var isPowerOfFour = function (n) {
+  return n > 0 && n & (n - 1 === 0) && n % 3 === 1;
+};
