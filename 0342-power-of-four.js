@@ -31,3 +31,10 @@ return 4 % 4 === 0 //true
 var isPowerOfFour = function (n) {
   return n > 0 && n & (n - 1 === 0) && n % 3 === 1;
 };
+
+/* <strong>Example 1</strong>
+4 =>   100
+3 =>   011
+     & ---
+       000 
+</pre> */
