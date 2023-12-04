@@ -29,10 +29,12 @@ return 4 % 4 === 0 //true
 
 // <strong>Code 2: Bit Manipulation</strong>
 var isPowerOfFour = function (n) {
-  return n > 0 && n & (n - 1 === 0) && n % 3 === 1;
+  return n > 0 && (n & (n - 1)) === 0 && n % 3 === 1;
 };
 
 /* <strong>Example 1</strong>
+(n & (n - 1)) === 0
+
 4 =>   100
 3 =>   011
      & ---
