@@ -39,7 +39,7 @@ if ((box[9 - 7]) !== undefined) // box[2] = 0
 return ([box[9 - 7], 1]) // [0, 1]
 </pre>*/
 
-//<strong>Code 2:</strong>
+//<strong>Code 2: map + forEach</strong>
 var twoSum = function (nums: number[], target: number): number[] {
   const indexMap: Map<number, number> = new Map();
 
