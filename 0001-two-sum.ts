@@ -9,7 +9,7 @@
 //ex.詳情請閱FlowChart
 
 //<strong>Code 1:</strong>
-var twoSum = function (nums, target) {
+var twoSum = function (nums: number[], target: number): number[] {
   const box = {};
   for (let i = 0; i < nums.length; i++) {
     if (box[target - nums[i]] !== undefined) {
@@ -18,6 +18,7 @@ var twoSum = function (nums, target) {
       box[nums[i]] = i;
     }
   }
+  return [];
 };
 
 /* <strong>Example 1</strong>
@@ -39,11 +40,16 @@ return ([box[9 - 7], 1]) // [0, 1]
 </pre>*/
 
 //<strong>Code 2:</strong>
-var twoSum = function (nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    let remainNum = target - nums[i];
-    for (let j = i + 1; j <= nums.length; j++) {
-      if (nums[j] === remainNum) return [i, j];
+var twoSum = function (nums: number[], target: number): number[] {
+  const indexMap: Map<number, number> = new Map();
+
+  nums.forEach((num, index) => {
+    const complement = target - num;
+
+    if (indexMap.has(complement)) {
+      return [indexMap.get(complement)!, index];
     }
-  }
+    indexMap.set(num, index);
+  });
+  return [];
 };
