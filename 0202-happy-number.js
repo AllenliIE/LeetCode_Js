@@ -10,7 +10,7 @@
 var isHappy = function (n) {
   while (n > 6) {
     n.toString()
-      .split('')
+      .split("")
       .forEach(function (element, index) {
         if (index === 0) n = 0;
         n += element * element;
@@ -33,7 +33,7 @@ return n === 1 //true */
 // <strong>Code 2: bigO(n)</strongc>
 var isHappy = function (n) {
   const set = new Set().add(1);
-  
+
   while (!set.has(n)) {
     set.add(n);
     let sum = 0;

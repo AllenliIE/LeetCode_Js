@@ -14,42 +14,43 @@
 
 // <strong>Code 1: BigO(n)</strong>
 function objDiff(obj1, obj2) {
-//Example Table
-//+--------------------------+---------------------+------------------------------------+
-//|           obj1           |         obj2        |                res                 |
-//+--------------------------+---------------------+------------------------------------+
-//|            {}            |        "a": 1       |                 {}                 | Example.1
-//|          "a": 1          |        "a": 2       |             {"a": [1, 2]}          | Example.2
-//|      "z":{"a": null}     |      "z":{"a": 2}   |         {"z":{"a": [null, 2]}}     | Example.2
-//| "z":[1, 2, 4, [2, 5, 7]] | "z": [1, 2, 3, [1]] |{"z":{ "2": [4,3],"3":{"0": [2,1]}}}| Example.3
-//|      "a": {"b": 1}       |        "a": [5]     |         {"a": [{"b": 1}, [5]]}     | Example.4
-//|      "a": [1, 2, {}]     |    "a": [1, 2, {}]  |                  {}                | Example.5
-//|      "a": [1, 2, {}]     |        false        |   { a: [ [ 1, 2, {} ], false ] }   | Example.6
-//+--------------------------+---------------------+------------------------------------+
+  //Example Table
+  //+--------------------------+---------------------+------------------------------------+
+  //|           obj1           |         obj2        |                res                 |
+  //+--------------------------+---------------------+------------------------------------+
+  //|            {}            |        "a": 1       |                 {}                 | Example.1
+  //|          "a": 1          |        "a": 2       |             {"a": [1, 2]}          | Example.2
+  //|      "z":{"a": null}     |      "z":{"a": 2}   |         {"z":{"a": [null, 2]}}     | Example.2
+  //| "z":[1, 2, 4, [2, 5, 7]] | "z": [1, 2, 3, [1]] |{"z":{ "2": [4,3],"3":{"0": [2,1]}}}| Example.3
+  //|      "a": {"b": 1}       |        "a": [5]     |         {"a": [{"b": 1}, [5]]}     | Example.4
+  //|      "a": [1, 2, {}]     |    "a": [1, 2, {}]  |                  {}                | Example.5
+  //|      "a": [1, 2, {}]     |        false        |   { a: [ [ 1, 2, {} ], false ] }   | Example.6
+  //+--------------------------+---------------------+------------------------------------+
 
-    //both primitive
-    if (!isObject(obj1) && !isObject(obj2)) return obj1 === obj2 ? {} : [obj1, obj2]
-    //one primitive
-    if (!isObject(obj1) || !isObject(obj2)) return [obj1, obj2]
-    //one array, one obj
-    if (Array.isArray(obj1) !== Array.isArray(obj2)) return [obj1, obj2]
-    
-    const diff = {}
+  //both primitive
+  if (!isObject(obj1) && !isObject(obj2))
+    return obj1 === obj2 ? {} : [obj1, obj2];
+  //one primitive
+  if (!isObject(obj1) || !isObject(obj2)) return [obj1, obj2];
+  //one array, one obj
+  if (Array.isArray(obj1) !== Array.isArray(obj2)) return [obj1, obj2];
 
-    for (const key in obj1) {
-        if (obj2.hasOwnProperty(key)) {
-            const res = objDiff(obj1[key], obj2[key])
-            if (Object.keys(res).length > 0) {
-                diff[key] = res
-            }
-        }
+  const diff = {};
+
+  for (const key in obj1) {
+    if (obj2.hasOwnProperty(key)) {
+      const res = objDiff(obj1[key], obj2[key]);
+      if (Object.keys(res).length > 0) {
+        diff[key] = res;
+      }
     }
-    return diff;
+  }
+  return diff;
 
-    function isObject(obj) {
-        return obj !== null && typeof obj === "object"
-    }
-};
+  function isObject(obj) {
+    return obj !== null && typeof obj === "object";
+  }
+}
 
 /* <strong>FlowChart:</strong>
 <strong>Example 1</strong>

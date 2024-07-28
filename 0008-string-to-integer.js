@@ -12,41 +12,40 @@
 //  詳請閱FlowChart
 
 var myAtoi = function (s) {
-
   let index = 0;
   while (s[index] === " ") {
-    index++
+    index++;
   }
 
-  let sign = 1 //default to '+'
-  if (s[index] === '+') {
-    sign = 1
-    index++
+  let sign = 1; //default to '+'
+  if (s[index] === "+") {
+    sign = 1;
+    index++;
   } else if (s[index] === "-") {
-    sign = -1
-    index++
+    sign = -1;
+    index++;
   }
 
-  const digits = {}
+  const digits = {};
   for (let i = 0; i < 10; i++) {
-    digits[i + ""] = i
+    digits[i + ""] = i;
   }
-  let result = 0
+  let result = 0;
   for (let i = index; i < s.length; i++) {
     if (digits[s[i]] !== undefined) {
-      result = result * 10 + digits[s[i]]
+      result = result * 10 + digits[s[i]];
     } else {
-      break
+      break;
     }
   }
 
-  result = result * sign
+  result = result * sign;
   if (result < -1 * Math.pow(2, 31)) {
-    result = -1 * Math.pow(2, 31)
+    result = -1 * Math.pow(2, 31);
   } else if (result > Math.pow(2, 31) - 1) {
-    result = Math.pow(2, 31) - 1
+    result = Math.pow(2, 31) - 1;
   }
-  return result
+  return result;
 };
 
 /* strong>Example 1</strong>

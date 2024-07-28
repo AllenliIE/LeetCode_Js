@@ -13,7 +13,7 @@ var numIslands = function (grid) {
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[i].length; j++) {
       //Check the grid position = 1
-      if (grid[i][j] === '1') {
+      if (grid[i][j] === "1") {
         dfs(grid, i, j);
         result++;
       }
@@ -29,11 +29,11 @@ const dfs = (grid, i, j) => {
     j < 0 ||
     i >= grid.length ||
     j >= grid[i].length ||
-    grid[i][j] === '0'
+    grid[i][j] === "0"
   )
     return;
 
-  grid[i][j] = '0';
+  grid[i][j] = "0";
 
   dfs(grid, i, j - 1); //left
   dfs(grid, i, j + 1); //right

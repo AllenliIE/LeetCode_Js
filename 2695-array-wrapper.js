@@ -8,18 +8,16 @@
 // 並添加"[", "]"來完成陣列樣式的結果(字串)。
 
 // <strong>Code 1: BigO(n)</strong>
-var ArrayWrapper = function(nums) {
-    this.nums = nums
+var ArrayWrapper = function (nums) {
+  this.nums = nums;
 };
 
-ArrayWrapper.prototype.valueOf = function() {
-    return this.nums.reduce(
-        (a, b) => a + b, 0
-    )
+ArrayWrapper.prototype.valueOf = function () {
+  return this.nums.reduce((a, b) => a + b, 0);
 };
 
-ArrayWrapper.prototype.toString = function() {
-    return `[${String(this.nums)}]`
+ArrayWrapper.prototype.toString = function () {
+  return `[${String(this.nums)}]`;
 };
 
 /* <strong>FlowChart:</strong>
