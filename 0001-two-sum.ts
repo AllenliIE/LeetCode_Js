@@ -42,14 +42,15 @@ return ([box[9 - 7], 1]) // [0, 1]
 //<strong>Code 2: map + forEach</strong>
 var twoSum = function (nums: number[], target: number): number[] {
   const indexMap: Map<number, number> = new Map();
+  let result: number[] = [];
 
   nums.forEach((num, index) => {
     const complement = target - num;
 
     if (indexMap.has(complement)) {
-      return [indexMap.get(complement)!, index];
+      result = [indexMap.get(complement)!, index];
     }
     indexMap.set(num, index);
   });
-  return [];
+  return result;
 };
