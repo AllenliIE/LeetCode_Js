@@ -7,7 +7,7 @@
 //    return a === b
 
 // < strong > Code 1:</strongc >
-var isPalindrome = function (x) {
+var isPalindrome = function (x: number): boolean {
   if (x <= 0) return false;
   return x.toString().split("").reverse().join("") === x.toString();
 };
@@ -20,7 +20,7 @@ console.log(x.toString().split('').reverse().join(''), x.toString())
 return 121 === 121 //true */
 
 // < strong > Code 2:</strongc >
-var isPalindrome = function (x) {
+var isPalindrome = function (x: number): boolean {
   if (x <= 0) return false;
 
   let number = x,
@@ -35,7 +35,7 @@ var isPalindrome = function (x) {
 };
 
 // < strong > Code 3:</strong >
-var isPalindrome = function (x) {
+var isPalindrome = function (x: number): boolean {
   if (x <= 0) return false;
   return `${x}`.split("").reverse().join("") === `${x}`.toString();
 };
