@@ -7,9 +7,9 @@
 // 4. 最後當宣告的空陣列長度為0時，回傳ture
 
 // <strong>Code 1: BigO(n)</strong>
-var isValid = function (s) {
-  const array = [];
-  const map = {
+var isValid = function (s: string): boolean {
+  const array: string[] = [];
+  const map: { [key: string]: string } = {
     ")": "(",
     "]": "[",
     "}": "{",
@@ -38,10 +38,10 @@ array.length === 0 => true
 </pre> */
 
 // <strong>Code 2: BigO(n)</strong>
-var isValid = function (s) {
-  const array = [];
+var isValid = function (s: string): boolean {
+  const array: string[] = [];
 
-  for (i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     if (s[i] === "(") {
       array.push(")");
     } else if (s[i] === "{") {
