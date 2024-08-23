@@ -10,7 +10,7 @@
 //5.「if條件」currentMax > max => ture: 更新最大的值
 //6. 回傳max */
 
-var maxArea = function (height) {
+var maxArea = function (height: number[]): number {
   let left = 0,
     right = height.length - 1,
     max = (right - left) * Math.min(height[left], height[right]);
@@ -25,8 +25,8 @@ var maxArea = function (height) {
     if (currentMax > max) {
       max = currentMax;
     }
-    return max;
   }
+  return max;
 };
 
 /*< strong > Example 1</strong >
@@ -108,7 +108,7 @@ var maxArea = function (height) {
   </pre> */
 
 //< strong > Code 2:  Double for loop (BigO(n^2))</strong >
-var maxArea = function (height) {
+var maxArea = function (height: number[]): number {
   let maxArea = 0;
   for (let i = 0; i < height.length; i++) {
     for (let j = i + 1; j < height.length; j++) {
@@ -120,7 +120,7 @@ var maxArea = function (height) {
 };
 
 //<strong>Code 3: Conditional (ternary) operator (BigO(n))</strong>
-var maxArea = function (height) {
+var maxArea = function (height: number[]): number {
   let startIndex = 0,
     endIndex = height.length - 1,
     maxArea = 0;
