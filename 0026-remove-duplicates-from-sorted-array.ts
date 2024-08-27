@@ -21,7 +21,7 @@
 //</pre>
 
 // <strong>Code 1: BigO(n)</strong>
-var removeDuplicates = function (nums) {
+var removeDuplicates = function (nums: number[]): number {
   if (nums === null || nums.length === 0) return 0;
   let count = 0;
   for (let i = 1; i < nums.length; i++) {
@@ -30,7 +30,7 @@ var removeDuplicates = function (nums) {
       nums[count] = nums[i];
     }
   }
-  return count++;
+  return count + 1;
 };
 
 /* <strong>Example 1</strong>
@@ -52,7 +52,7 @@ return ++count => 1 + 1 = 2
 </pre> */
 
 // <strong>Code 2: BigO(n)</strong>
-var removeDuplicates = function (nums) {
+var removeDuplicates = function (nums: number[]): number {
   const uniq = new Set(nums);
   const num = Array.from(uniq);
 
