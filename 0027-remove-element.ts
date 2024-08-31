@@ -1,7 +1,7 @@
 //Blog:https://www.allenliservice.site/leetcode-js-27-remove-element/
 
 // <strong>Code 1:</strong>
-var removeElement = function (nums, val) {
+var removeElement = function (nums: number[], val: number): number {
   if (!nums) return 0;
 
   let k = 0;
@@ -72,7 +72,7 @@ var removeElement = function (nums, val) {
     </pre> */
 
 // <strong>Code 2:</strong>
-var removeElement = function (nums, val) {
+var removeElement = function (nums: number[], val: number): number {
   let index = nums.indexOf(val);
 
   while (index !== -1) {
