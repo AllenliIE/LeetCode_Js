@@ -10,7 +10,7 @@
 
 //<strong>Code 1:</strong>
 var twoSum = function (nums: number[], target: number): number[] {
-  const box = {};
+  const box: Record<string, number> = {};
   for (let i = 0; i < nums.length; i++) {
     if (box[target - nums[i]] !== undefined) {
       return [box[target - nums[i]], i];
