@@ -11,9 +11,9 @@
 //6. 回傳max */
 
 var maxArea = function (height: number[]): number {
-  let left = 0,
-    right = height.length - 1,
-    max = (right - left) * Math.min(height[left], height[right]);
+  let left: number = 0,
+    right: number = height.length - 1,
+    max: number = (right - left) * Math.min(height[left], height[right]);
 
   while (right > left) {
     if (height[right] < height[left]) {
@@ -109,7 +109,7 @@ var maxArea = function (height: number[]): number {
 
 //< strong > Code 2:  Double for loop (BigO(n^2))</strong >
 var maxArea = function (height: number[]): number {
-  let maxArea = 0;
+  let maxArea: number = 0;
   for (let i = 0; i < height.length; i++) {
     for (let j = i + 1; j < height.length; j++) {
       let currentMaxArea = Math.min(height[i], height[j]) * (j - i);
@@ -121,9 +121,9 @@ var maxArea = function (height: number[]): number {
 
 //<strong>Code 3: Conditional (ternary) operator (BigO(n))</strong>
 var maxArea = function (height: number[]): number {
-  let startIndex = 0,
-    endIndex = height.length - 1,
-    maxArea = 0;
+  let startIndex: number = 0,
+    endIndex: number = height.length - 1,
+    maxArea: number = 0;
 
   while (startIndex < endIndex) {
     maxArea = Math.max(
