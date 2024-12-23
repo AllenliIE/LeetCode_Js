@@ -11,7 +11,8 @@
 //6. 回傳max */
 
 var maxArea = function (height: number[]): number {
-  let left: number = 0,
+  let currentMax: number = 0,
+    left: number = 0,
     right: number = height.length - 1,
     max: number = (right - left) * Math.min(height[left], height[right]);
 
@@ -21,7 +22,7 @@ var maxArea = function (height: number[]): number {
     } else {
       left++;
     }
-    let currentMax = (right - left) * Math.min(height[left], height[right]);
+    currentMax = (right - left) * Math.min(height[left], height[right]);
     if (currentMax > max) {
       max = currentMax;
     }
@@ -109,10 +110,11 @@ var maxArea = function (height: number[]): number {
 
 //< strong > Code 2:  Double for loop (BigO(n^2))</strong >
 var maxArea = function (height: number[]): number {
-  let maxArea: number = 0;
+  let currentMaxArea: number = 0,
+    maxArea: number = 0;
   for (let i = 0; i < height.length; i++) {
     for (let j = i + 1; j < height.length; j++) {
-      let currentMaxArea = Math.min(height[i], height[j]) * (j - i);
+      currentMaxArea = Math.min(height[i], height[j]) * (j - i);
       if (currentMaxArea > maxArea) maxArea = currentMaxArea;
     }
   }
